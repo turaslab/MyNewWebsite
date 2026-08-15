@@ -1,0 +1,178 @@
+/* Genel Ayarlar ve IndieWeb Teması */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #f6f6f6;
+    color: #000000;
+    padding: 20px;
+    max-width: 1250px; /* Sitenin PC'de yayılacağı ideal genişlik */
+    margin: 0 auto;    /* Siteyi ekrana ortalar */
+}
+
+/* Tüm kutuların ortak çerçeve stili */
+.logo-box, .title-box, .blog-box, .news-box, .now-playing-box, 
+.quote-box, .right-column, .foto-blog {
+    border: 2px solid #000000;
+    padding: 15px;
+    background: #ffffff;
+}
+
+/* Üst Başlık Düzeni */
+.main-header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.logo-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+}
+
+.title-box {
+    flex: 4;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Ana Merkezin Yan Yana 3 Sütunlu Düzeni (PC için) */
+.container {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* [SOL SÜTUN] Büyük Blog Dikdörtgeni ve Altındaki Ufak Boşluk */
+.left-column {
+    flex: 2.5; /* En geniş sütun burası olacak */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.blog-box {
+    min-height: 380px; /* Uzunlamasına büyük dikey dikdörtgen */
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.foto-blog {
+    width: 100px;
+    height: 60px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.blog-content {
+    flex: 1;
+    max-height: 260px;
+    overflow-y: scroll;
+    padding-right: 10px;
+    line-height: 1.4;
+}
+
+.news-box {
+    min-height: 80px; /* Altındaki ufak yazı yazmalık alan */
+}
+
+/* [ORTA SÜTUN] Now Playing Sekmesi ve Quotes */
+.middle-column {
+    flex: 1.5; /* Orta genişlikte sütun */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.now-playing-box {
+    height: 240px; /* Çiziminizdeki foto 1 kutusunun yeni boyutu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.music-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.quote-box {
+    height: 125px; /* Alıntı kutusu alanı */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* [EN SAĞ SÜTUN] Site Tree / Linkler */
+.right-column {
+    flex: 1.2; /* Daha derli toplu durması için ideal dikey genişlik */
+    min-height: 380px;
+}
+
+.site-tree {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.site-tree li {
+    margin-bottom: 10px;
+}
+
+/* ======================================================= */
+/* MOBİL UYUMLULUK AYARI (Telefonlarda Akıllı Sıralama) */
+/* ======================================================= */
+@media (max-width: 850px) {
+    body {
+        padding: 10px;
+    }
+
+    .main-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo-box {
+        max-width: 100%;
+    }
+
+    /* 3 sütunu alt alta tek sıra yapar */
+    .container {
+        flex-direction: column;
+    }
+
+    .left-column, .middle-column, .right-column {
+        width: 100%;
+    }
+
+    /* Telefon ekranında çiziminizdeki gibi dizilim sırası */
+    .right-column {
+        order: 1; /* Site tree (Menü) en üste gelir */
+    }
+    
+    .middle-column {
+        order: 2; /* Now playing ve quotes ortaya gelir */
+    }
+
+    .left-column {
+        order: 3; /* Büyük Blog kutusu ve haber alanı en alta kayar */
+    }
+}
