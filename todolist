@@ -5,10 +5,3 @@ v0.4 → Oyun kütüphanesi
 v0.5 → Giriş sistemi
 v0.6 → Dashboard
 v0.7 → Servis entegrasyonları (RSS, Minecraft, müzik vb.)
-
-225470923turaslab@users.noreply.github.com
-225470923turaslab@users.noreply.github.com
-
-git init
-git add .
-git commit -m "Initial commit"
