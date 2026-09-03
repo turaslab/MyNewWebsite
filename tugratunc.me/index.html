@@ -1,65 +1,120 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="tr" data-theme="paper">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvet Room / Tura's Lab</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e3d7">
+  <meta name="description" content="Tura'nın kişisel arşivleri, oyunları, yazıları, müzikleri ve dijital deneyleri.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tura's Lab">
+  <meta property="og:description" content="Kişisel arşivler, oyunlar ve dijital deneyler.">
+  <meta property="og:url" content="https://tugratunc.me/">
+  <meta property="og:image" content="https://tugratunc.me/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tura's Lab">
+  <meta name="twitter:description" content="Kişisel arşivler, oyunlar ve dijital deneyler.">
+  <meta name="twitter:image" content="https://tugratunc.me/og.png">
+  <title>Tura's Lab — kişisel arşivler ve dijital deneyler</title>
+  <link rel="alternate" type="application/rss+xml" title="Tura's Lab RSS" href="rss.xml">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
 
-    <!-- ÜST LOGO & BAŞLIK ALANI -->
-    <header class="main-header">
-        <div class="logo-box">Ufak Kişisel Logo</div>
-        <div class="title-box">Welcome to the my Velvet Room ya da tura's lab</div>
-    </header>
+  <header class="site-header frame">
+    <a class="brand" href="index.html" aria-label="Tura's Lab ana sayfa">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>Tura's Lab</strong><small>room index / 001</small></span>
+    </a>
+    <p class="identity">Tura — kişisel arşivler, oyunlar ve dijital deneyler.</p>
+    <div class="header-tools">
+      <label class="theme-control" for="theme-select">
+        <span>Tema</span>
+        <select id="theme-select" aria-label="Site temasını seç">
+          <option value="paper">Paper Dashboard</option>
+          <option value="garage">Night Garage</option>
+          <option value="citypop">City Pop Morning</option>
+          <option value="lounge">Arabesque Lounge</option>
+          <option value="lowpoly">Low Poly Memory</option>
+        </select>
+      </label>
+      <a class="utility-link" href="rss.xml">RSS ↗</a>
+    </div>
+  </header>
 
-    <!-- ANA İÇERİK ALANI (3 SÜTUN) -->
-    <main class="container">
-        
-        <!-- 1. SOL SÜTUN: BÜYÜK BLOG VE ALTINDA UFAK YAZI ALANI -->
-        <section class="left-column">
-            <div class="blog-box">
-                <div class="blog-header">
-                    <h1>Blog #1</h1>
-                    <div class="foto-blog">foto Blog</div>
-                </div>
-                <div class="blog-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum.</p>
-                </div>
-            </div>
-            
-            <div class="news-box">
-                haber veya protesto. örneğin google androidi öldürüyor gibi
-            </div>
-        </section>
+  <main id="main" class="lab-grid" tabindex="-1">
+    <article class="widget widget-blog span-7 row-2" aria-labelledby="blog-title">
+      <div class="widget-topline"><span class="eyebrow">01 / Yazı odası</span><a href="blog/">Bütün yazılar ↗</a></div>
+      <div class="blog-preview">
+        <div>
+          <p class="status-line"><span class="signal"></span> İlk not hazırlanıyor</p>
+          <h1 id="blog-title">Burası sonuçlardan çok izlerin tutulduğu yer.</h1>
+          <p>Oynadıklarım, dinlediklerim, üzerinde çalıştıklarım ve aklımda kalmasını istediğim küçük şeyler. İlk kişisel yazı geldiğinde bu oda onunla açılacak.</p>
+        </div>
+        <a class="text-action" href="blog/">Yazı odasını aç <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="index-stamp" aria-hidden="true">LOG<br>000</div>
+    </article>
 
-        <!-- 2. ORTA SÜTUN: NOW PLAYING VE QUOTES -->
-        <section class="middle-column">
-            <div class="now-playing-box">
-                <span class="music-icon">🎵</span> Now Playing
-            </div>
-            <div class="quote-box">
-                quote
-            </div>
-        </section>
+    <section class="widget widget-games span-5" aria-labelledby="games-title">
+      <div class="widget-topline"><span class="eyebrow">02 / Oyun kütüphanesi</span><a href="games/">Kütüphaneye git ↗</a></div>
+      <div class="game-display">
+        <div class="game-viewport" aria-hidden="true"><span class="horizon"></span><span class="road"></span><span class="cursor-car"></span></div>
+        <div><span class="data-label">SELECTED SAVE</span><h2 id="games-title">İlk kayıt için boş yuva</h2><p>Bitirilenler, yarım kalanlar ve akılda kalan küçük notlar burada birikecek.</p></div>
+      </div>
+    </section>
 
-        <!-- 3. EN SAĞ SÜTUN: SITE TREE -->
-        <aside class="right-column">
-            <h3>site tree ve linkler</h3>
-            <ul class="site-tree">
-                <li>• deneme</li>
-                <li>• deneme</li>
-                <li>• deneme</li>
-                <li>• deneme</li>
-                <li>• deneme</li>
-                <li>• deneme</li>
-                <li>• deneme</li>
-                <li>• deneme</li>
-            </ul>
-        </aside>
+    <section class="widget widget-music span-5" aria-labelledby="music-title">
+      <div class="widget-topline"><span class="eyebrow">03 / Müzik</span><a href="music/">Arşivi aç ↗</a></div>
+      <div class="music-copy"><p class="track-kicker">NOW PLAYING / IDLE</p><h2 id="music-title">İğne henüz plağa değmedi.</h2><p>Redd'den city pop'a, arabeskten midwest emo'ya uzanan raf hazırlanıyor.</p></div>
+      <div class="music-bar" role="group" aria-label="Müzik çalar">
+        <button type="button" class="player-button" aria-label="Parçayı oynat" disabled>▶</button>
+        <div class="track-line"><span class="track-progress" style="--progress: 0%"></span></div><span class="track-time">00:00</span>
+      </div>
+    </section>
 
-    </main>
+    <section class="widget widget-project span-4" aria-labelledby="project-title">
+      <div class="widget-topline"><span class="eyebrow">04 / Tezgâhta</span><a href="projects/">Ne yaptım? ↗</a></div>
+      <p class="status-line"><span class="signal signal-live"></span> Devam ediyor</p>
+      <h2 id="project-title">Tura's Lab</h2>
+      <p>Bu köşenin kendisi ilk proje: daha kişisel, daha kullanışlı ve zamanla genişleyen bir internet evi.</p>
+      <dl class="project-meta"><div><dt>Durum</dt><dd>in progress</dd></div><div><dt>Sürüm</dt><dd>0.1</dd></div></dl>
+    </section>
 
+    <section class="widget widget-timer span-3" aria-labelledby="timer-title">
+      <div class="widget-topline"><span class="eyebrow">05 / Sayaç</span><span class="data-label">FOCUS</span></div>
+      <h2 id="timer-title" class="timer" aria-live="polite">25:00</h2>
+      <div class="timer-controls"><button type="button" data-timer="toggle">Başlat</button><button type="button" data-timer="reset">Sıfırla</button></div>
+      <p class="timer-note">Sekmeyi kapatsan bile aynı cihazda kaldığı yer hatırlanır.</p>
+    </section>
+
+    <nav class="widget widget-map span-5" aria-labelledby="map-title">
+      <div class="widget-topline"><span class="eyebrow">06 / Site ağacı</span><span class="data-label">5 ROOMS</span></div>
+      <h2 id="map-title" class="visually-hidden">Site bölümleri</h2>
+      <ol class="room-list">
+        <li><a href="blog/"><span>01</span> Blog <em>kişisel notlar</em></a></li>
+        <li><a href="games/"><span>02</span> Oyunlar <em>kütüphane</em></a></li>
+        <li><a href="music/"><span>03</span> Müzik <em>albüm rafı</em></a></li>
+        <li><a href="projects/"><span>04</span> Projeler <em>tezgâhtakiler</em></a></li>
+        <li><a href="about/"><span>05</span> Hakkında <em>Tura kim?</em></a></li>
+      </ol>
+    </nav>
+
+    <aside class="widget widget-note span-7" aria-label="Kısa not">
+      <div><span class="eyebrow">Lab note / 03.09.2026</span><blockquote>“Karmaşık bir huzur.”</blockquote></div>
+      <p>Bu site bitmiş bir vitrin değil. Odaları zamanla dolacak, yeri geldiğinde şekil değiştirecek.</p>
+    </aside>
+
+    <section class="widget widget-about span-5" aria-labelledby="about-title">
+      <div class="widget-topline"><span class="eyebrow">07 / Kısa tanışma</span><a href="about/">Devamı ↗</a></div>
+      <h2 id="about-title">Selam, ben Tura.</h2><p>Burada ne sevdiğimi, ne yaptığımı ve internette kaybolmasını istemediğim şeyleri biriktiriyorum.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer frame">
+    <p>© <span data-current-year>2026</span> Tura's Lab</p><p>Bağımsız, kişisel ve yapım aşamasında.</p><a href="https://github.com/turaslab" rel="me">GitHub ↗</a>
+  </footer>
 </body>
 </html>
