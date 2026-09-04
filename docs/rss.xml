@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+    <!-- Akışın temel bilgileri -->
     <title>Tura's Lab</title>
     <link>https://tugratunc.me/</link>
     <description>Tura'nın kişisel yazıları, oyunları, müzikleri ve dijital deneyleri.</description>
     <language>tr</language>
+
+    <!-- RSS dosyasının kalıcı adresi -->
     <atom:link href="https://tugratunc.me/rss.xml" rel="self" type="application/rss+xml" />
     <lastBuildDate>Thu, 03 Sep 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- Yeni blog yazılarının <item> kayıtları bu satırın altına eklenir. -->
   </channel>
 </rss>

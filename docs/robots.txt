@@ -1,4 +1,6 @@
+# Arama motorları sitenin herkese açık sayfalarını tarayabilir.
 User-agent: *
 Allow: /
 
+# Site haritasının adresi.
 Sitemap: https://tugratunc.me/sitemap.xml

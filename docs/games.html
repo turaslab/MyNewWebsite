@@ -1,17 +1,140 @@
-<!doctype html><html lang="tr" data-theme="paper"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Tura'nın oyun kütüphanesi ve kişisel oyun notları."><meta property="og:title" content="Oyun Kütüphanesi — Tura's Lab"><meta property="og:description" content="Bitirilenler, yarım kalanlar ve akılda kalanlar."><meta property="og:image" content="https://tugratunc.me/og.png"><meta name="twitter:card" content="summary_large_image"><title>Oyun Kütüphanesi — Tura's Lab</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css"><script src="js/main.js" defer></script></head><body>
-<a class="skip-link" href="#main">İçeriğe geç</a><header class="site-header frame"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>Tura's Lab</strong><small>room / games</small></span></a><p class="identity">Bitirilenler, yarım kalanlar ve akılda kalanlar.</p><div class="header-tools"><label class="theme-control" for="theme-select"><span>Tema</span><select id="theme-select"><option value="paper">Paper Dashboard</option><option value="garage">Night Garage</option><option value="citypop">City Pop Morning</option><option value="lounge">Arabesque Lounge</option><option value="lowpoly">Low Poly Memory</option></select></label><a class="utility-link" href="rss.xml">RSS ↗</a></div></header>
-<main id="main" class="room-page"><nav class="breadcrumbs"><a href="index.html">Lab</a><span>/</span><span>Oyunlar</span></nav><header class="room-header"><div><span class="room-code">Room 02 / memory card</span><h1>Oyunlar</h1></div><p>Puan tablosundan çok kişisel hafıza: nerede oynandı, ne bıraktı ve neden hâlâ hatırlanıyor?</p></header>
-<div class="archive-grid" data-library="games">
-  <section class="panel wide">
-    <div class="widget-topline"><span class="eyebrow">Oyun kayıtları</span><span class="data-label" data-library-count>yükleniyor</span></div>
-    <div data-library-list><p>Kayıtlar okunuyor…</p></div>
-  </section>
-  <aside class="panel shelf-note"><span class="shelf-number">02</span><div><h2>Bir skor sitesi değil.</h2><p>Yeni kayıt için <code>games/game_template.md</code> dosyasını kopyala ve adını <code>games/index.json</code> listesine ekle.</p></div></aside>
-  <article class="panel full markdown-reader" data-library-reader hidden>
-    <a class="reader-back" href="games.html">← Bütün oyunlar</a>
-    <header class="reader-header"><span class="room-code" data-reader-meta></span><h2 data-reader-title></h2><p data-reader-summary></p></header>
-    <img class="reader-cover" data-reader-image src="" alt="" hidden>
-    <div class="markdown-body" data-reader-body></div>
-  </article>
-</div>
-<nav class="room-nav"><a href="blog.html">Blog →</a><a href="music.html">Müzik →</a><a href="projects.html">Projeler →</a><a href="about.html">Hakkında →</a></nav></main><footer class="site-footer frame"><p>© <span data-current-year>2026</span> Tura's Lab</p><p>Room 02 / Games</p><a href="index.html">Lab'e dön ↑</a></footer></body></html>
+<!doctype html>
+<html lang="tr" data-theme="paper">
+  <head>
+    <!-- Sayfa bilgileri -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Tura'nın oyun kütüphanesi ve kişisel oyun notları."
+    >
+    <meta property="og:title" content="Oyun Kütüphanesi — Tura's Lab">
+    <meta
+      property="og:description"
+      content="Bitirilenler, yarım kalanlar ve akılda kalanlar."
+    >
+    <meta property="og:image" content="https://tugratunc.me/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Oyun Kütüphanesi — Tura's Lab</title>
+
+    <!-- Ortak site dosyaları -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+
+    <!-- Ortak üst menü -->
+    <header class="site-header frame">
+      <a class="brand" href="index.html" aria-label="Tura's Lab ana sayfa">
+        <span class="brand-mark" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+        <span>
+          <strong>Tura's Lab</strong>
+          <small>room / games</small>
+        </span>
+      </a>
+
+      <p class="identity">Bitirilenler, yarım kalanlar ve akılda kalanlar.</p>
+
+      <div class="header-tools">
+        <label class="theme-control" for="theme-select">
+          <span>Tema</span>
+          <select id="theme-select" aria-label="Site temasını seç">
+            <option value="paper">Paper Dashboard</option>
+            <option value="garage">Night Garage</option>
+            <option value="citypop">City Pop Morning</option>
+            <option value="lounge">Arabesque Lounge</option>
+            <option value="lowpoly">Low Poly Memory</option>
+          </select>
+        </label>
+        <a class="utility-link" href="rss.xml">RSS ↗</a>
+      </div>
+    </header>
+
+    <main id="main" class="room-page">
+      <!-- Sayfa yolu -->
+      <nav class="breadcrumbs" aria-label="Sayfa yolu">
+        <a href="index.html">Lab</a>
+        <span>/</span>
+        <span>Oyunlar</span>
+      </nav>
+
+      <!-- Oda başlığı -->
+      <header class="room-header">
+        <div>
+          <span class="room-code">Room 02 / memory card</span>
+          <h1>Oyunlar</h1>
+        </div>
+        <p>
+          Puan tablosundan çok kişisel hafıza: nerede oynandı, ne bıraktı ve
+          neden hâlâ hatırlanıyor?
+        </p>
+      </header>
+
+      <!-- Oyun arşivi -->
+      <div class="archive-grid" data-library="games">
+        <!-- JavaScript bu alanı games/index.json dosyasından doldurur. -->
+        <section class="panel wide">
+          <div class="widget-topline">
+            <span class="eyebrow">Oyun kayıtları</span>
+            <span class="data-label" data-library-count>yükleniyor</span>
+          </div>
+          <div data-library-list>
+            <p>Kayıtlar okunuyor…</p>
+          </div>
+        </section>
+
+        <!-- Yeni içerik ekleme hatırlatıcısı -->
+        <aside class="panel shelf-note">
+          <span class="shelf-number">02</span>
+          <div>
+            <h2>Bir skor sitesi değil.</h2>
+            <p>
+              Yeni kayıt için <code>games/game_template.md</code> dosyasını
+              kopyala ve adını <code>games/index.json</code> listesine ekle.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Seçilen Markdown oyun kaydı burada açılır. -->
+        <article class="panel full markdown-reader" data-library-reader hidden>
+          <a class="reader-back" href="games.html">← Bütün oyunlar</a>
+          <header class="reader-header">
+            <span class="room-code" data-reader-meta></span>
+            <h2 data-reader-title></h2>
+            <p data-reader-summary></p>
+          </header>
+          <img
+            class="reader-cover"
+            data-reader-image
+            src=""
+            alt=""
+            hidden
+          >
+          <div class="markdown-body" data-reader-body></div>
+        </article>
+      </div>
+
+      <!-- Diğer odalar -->
+      <nav class="room-nav" aria-label="Diğer odalar">
+        <a href="blog.html">Blog →</a>
+        <a href="music.html">Müzik →</a>
+        <a href="projects.html">Projeler →</a>
+        <a href="about.html">Hakkında →</a>
+      </nav>
+    </main>
+
+    <!-- Alt bilgi -->
+    <footer class="site-footer frame">
+      <p>© <span data-current-year>2026</span> Tura's Lab</p>
+      <p>Room 02 / Games</p>
+      <a href="index.html">Lab'e dön ↑</a>
+    </footer>
+  </body>
+</html>
