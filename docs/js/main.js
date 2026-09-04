@@ -12,6 +12,7 @@ const THEMES = new Set([
 
 const THEME_KEY = 'turas-lab-theme';
 const TIMER_KEY = 'turas-lab-timer';
+const PLAYER_TRACK_KEY = 'turas-lab-player-track';
 
 // Her içerik odasının dosya yapısı ve ekranda kullanacağı metinler burada.
 // Yeni bir oda eklemek gerektiğinde önce bu tabloya bir kayıt eklenebilir.
@@ -196,6 +197,206 @@ function setupTimer() {
   }, 1000);
 
   render();
+}
+
+// ------------------------------------------------------------
+// Ana sayfa müzik çaları
+// ------------------------------------------------------------
+
+function formatPlayerTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) {
+    return '00:00';
+  }
+
+  const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
+  const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+
+  return `${minutes}:${remainingSeconds}`;
+}
+
+async function setupMusicPlayer() {
+  const root = document.querySelector('[data-music-player]');
+
+  // Müzik çaları yalnızca ana sayfa içerir.
+  if (!root) {
+    return;
+  }
+
+  const audio = root.querySelector('[data-player-audio]');
+  const previous = root.querySelector('[data-player="previous"]');
+  const toggle = root.querySelector('[data-player="toggle"]');
+  const next = root.querySelector('[data-player="next"]');
+  const seek = root.querySelector('[data-player="seek"]');
+  const status = root.querySelector('[data-player-status]');
+  const title = root.querySelector('[data-player-title]');
+  const artist = root.querySelector('[data-player-artist]');
+  const time = root.querySelector('[data-player-time]');
+  const message = root.querySelector('[data-player-message]');
+
+  let tracks = [];
+  let trackIndex = 0;
+
+  const updateToggleButton = () => {
+    const isPlaying = !audio.paused;
+    toggle.textContent = isPlaying ? 'Ⅱ' : '▶';
+    toggle.setAttribute(
+      'aria-label',
+      isPlaying ? 'Parçayı duraklat' : 'Parçayı oynat',
+    );
+    toggle.setAttribute('aria-pressed', String(isPlaying));
+    status.textContent = isPlaying ? 'LAB RADIO / ÇALIYOR' : 'LAB RADIO / HAZIR';
+  };
+
+  const updateProgress = () => {
+    const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+    const currentTime = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+    const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+    seek.value = progress;
+    seek.style.setProperty('--progress', `${progress}%`);
+    time.textContent = `${formatPlayerTime(currentTime)} / ${formatPlayerTime(duration)}`;
+  };
+
+  const playCurrentTrack = async () => {
+    try {
+      await audio.play();
+      message.textContent = '';
+    } catch (error) {
+      message.textContent = 'Tarayıcı oynatmayı engelledi; yeniden ▶ düğmesine bas.';
+      console.error(error);
+    }
+  };
+
+  const loadTrack = (newIndex, shouldPlay = false) => {
+    if (!tracks.length) {
+      return;
+    }
+
+    trackIndex = (newIndex + tracks.length) % tracks.length;
+    const track = tracks[trackIndex];
+
+    localStorage.setItem(PLAYER_TRACK_KEY, track.id);
+    audio.src = track.file;
+    audio.load();
+
+    title.textContent = track.title;
+    artist.textContent = track.artist;
+    status.textContent = 'LAB RADIO / HAZIRLANIYOR';
+    message.textContent = '';
+    toggle.disabled = true;
+    seek.disabled = true;
+    updateProgress();
+
+    if (shouldPlay) {
+      audio.addEventListener(
+        'canplay',
+        () => {
+          playCurrentTrack();
+        },
+        { once: true },
+      );
+    }
+  };
+
+  const changeTrack = (offset, shouldPlay = !audio.paused) => {
+    loadTrack(trackIndex + offset, shouldPlay);
+  };
+
+  toggle.addEventListener('click', () => {
+    if (audio.paused) {
+      playCurrentTrack();
+    } else {
+      audio.pause();
+    }
+  });
+
+  previous.addEventListener('click', () => {
+    if (audio.currentTime > 3) {
+      audio.currentTime = 0;
+      updateProgress();
+      return;
+    }
+
+    changeTrack(-1);
+  });
+
+  next.addEventListener('click', () => {
+    changeTrack(1);
+  });
+
+  seek.addEventListener('input', () => {
+    if (Number.isFinite(audio.duration)) {
+      audio.currentTime = (Number(seek.value) / 100) * audio.duration;
+    }
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    toggle.disabled = false;
+    seek.disabled = false;
+    updateProgress();
+    updateToggleButton();
+  });
+
+  audio.addEventListener('timeupdate', updateProgress);
+  audio.addEventListener('play', updateToggleButton);
+  audio.addEventListener('pause', updateToggleButton);
+  audio.addEventListener('ended', () => {
+    const hasNextTrack = trackIndex < tracks.length - 1;
+
+    if (hasNextTrack) {
+      changeTrack(1, true);
+    } else {
+      audio.currentTime = 0;
+      updateProgress();
+      updateToggleButton();
+    }
+  });
+  audio.addEventListener('error', () => {
+    status.textContent = 'LAB RADIO / HATA';
+    message.textContent = 'Ses dosyası açılamadı. Çalma listesindeki yolu kontrol et.';
+    toggle.disabled = true;
+    seek.disabled = true;
+  });
+
+  try {
+    const response = await fetch('music/playlist.json', { cache: 'no-store' });
+
+    if (!response.ok) {
+      throw new Error('music/playlist.json okunamadı');
+    }
+
+    const playlist = await response.json();
+    const safeAudioPath = /^audio\/music\/[A-Za-z0-9._/-]+\.(?:aac|m4a|mp3|ogg|wav)$/i;
+
+    tracks = Array.isArray(playlist.tracks)
+      ? playlist.tracks.filter((track) => {
+          return track.id && track.title && track.artist && safeAudioPath.test(track.file || '');
+        })
+      : [];
+
+    if (!tracks.length) {
+      status.textContent = 'LAB RADIO / BOŞ';
+      title.textContent = 'Çalma listesi boş.';
+      artist.textContent = 'music/playlist.json dosyasına ilk parçayı ekle.';
+      message.textContent = '';
+      return;
+    }
+
+    const savedTrackId = localStorage.getItem(PLAYER_TRACK_KEY);
+    const savedIndex = tracks.findIndex((track) => track.id === savedTrackId);
+    const initialIndex = savedIndex >= 0 ? savedIndex : 0;
+
+    const hasMultipleTracks = tracks.length > 1;
+    previous.disabled = !hasMultipleTracks;
+    next.disabled = !hasMultipleTracks;
+    loadTrack(initialIndex);
+  } catch (error) {
+    status.textContent = 'LAB RADIO / HATA';
+    title.textContent = 'Çalma listesi okunamadı.';
+    artist.textContent = 'Yerel sunucuyu ve playlist dosyasını kontrol et.';
+    message.textContent = '';
+    console.error(error);
+  }
 }
 
 // ------------------------------------------------------------
@@ -581,23 +782,6 @@ async function setupHomeContent() {
     console.error(error);
   }
 
-  try {
-    const albums = sortRecords('music', await getCollection('music'));
-    const latestAlbum = albums[0];
-
-    if (latestAlbum) {
-      document.querySelector('[data-latest-music-meta]').textContent = joinMeta([
-        latestAlbum.meta.artist,
-        latestAlbum.meta.year,
-      ]);
-      document.querySelector('[data-latest-music-title]').textContent =
-        latestAlbum.meta.title;
-      document.querySelector('[data-latest-music-summary]').textContent =
-        latestAlbum.meta.summary || '';
-    }
-  } catch (error) {
-    console.error(error);
-  }
 }
 
 // ------------------------------------------------------------
@@ -607,5 +791,6 @@ async function setupHomeContent() {
 setupTheme();
 setupYear();
 setupTimer();
+setupMusicPlayer();
 setupLibrary();
 setupHomeContent();

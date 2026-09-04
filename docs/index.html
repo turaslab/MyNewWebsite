@@ -149,6 +149,7 @@
       <section
         class="widget widget-music span-5"
         aria-labelledby="music-title"
+        data-music-player
       >
         <div class="widget-topline">
           <span class="eyebrow">03 / Müzik</span>
@@ -156,32 +157,64 @@
         </div>
 
         <div class="music-copy">
-          <p class="track-kicker" data-latest-music-meta>
-            NOW PLAYING / IDLE
+          <p class="track-kicker" data-player-status aria-live="polite">
+            LAB RADIO / YÜKLENİYOR
           </p>
-          <h2 id="music-title" data-latest-music-title>
-            İğne henüz plağa değmedi.
-          </h2>
-          <p data-latest-music-summary>
-            Redd'den city pop'a, arabeskten midwest emo'ya uzanan raf
-            hazırlanıyor.
-          </p>
+          <h2 id="music-title" data-player-title>Kaset takılıyor.</h2>
+          <p data-player-artist>Çalma listesi hazırlanıyor…</p>
         </div>
 
-        <div class="music-bar" role="group" aria-label="Müzik çalar">
+        <!-- Gerçek ses dosyalarını çalan ana sayfa müzik çaları -->
+        <audio data-player-audio preload="metadata"></audio>
+        <div class="music-bar" role="group" aria-label="Müzik çalar kontrolleri">
           <button
             type="button"
             class="player-button"
+            data-player="previous"
+            aria-label="Önceki parça"
+            disabled
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            class="player-button"
+            data-player="toggle"
             aria-label="Parçayı oynat"
+            aria-pressed="false"
             disabled
           >
             ▶
           </button>
-          <div class="track-line">
-            <span class="track-progress" style="--progress: 0%"></span>
-          </div>
-          <span class="track-time">00:00</span>
+          <button
+            type="button"
+            class="player-button"
+            data-player="next"
+            aria-label="Sonraki parça"
+            disabled
+          >
+            →
+          </button>
+
+          <label class="visually-hidden" for="player-seek">
+            Parçada ilerle
+          </label>
+          <input
+            id="player-seek"
+            class="track-line"
+            data-player="seek"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            style="--progress: 0%"
+            disabled
+          >
+          <time class="track-time" data-player-time>00:00 / 00:00</time>
         </div>
+
+        <p class="player-message" data-player-message aria-live="polite"></p>
       </section>
 
       <!-- 04: Güncel proje -->

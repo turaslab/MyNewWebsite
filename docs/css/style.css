@@ -456,15 +456,18 @@ h2 {
   color: var(--accent)!important;
   font-size: .65rem!important;
 }
+[data-player-audio] {
+  display: none;
+}
 .music-bar {
   display: grid;
-  grid-template-columns: 34px 1fr auto;
+  grid-template-columns: repeat(3,44px) minmax(90px,1fr) auto;
   gap: .7rem;
   align-items: center;
   margin-top: 1rem;
 }
 .player-button,.timer-controls button {
-  min-height: 34px;
+  min-height: 44px;
   border: 1px solid var(--line);
   border-radius: 0;
   background: var(--surface-2);
@@ -472,25 +475,77 @@ h2 {
   font-family: "Courier New",Courier,monospace;
   cursor: pointer;
 }
+.player-button {
+  width: 44px;
+  padding: 0;
+}
+.player-button:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--surface);
+}
 .player-button:disabled {
   cursor: not-allowed;
   opacity: .5;
 }
 .track-line {
-  position: relative;
-  height: 5px;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.track-line:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+.track-line::-webkit-slider-runnable-track {
+  height: 6px;
+  border: 1px solid var(--line);
+  background: linear-gradient(
+    to right,
+    var(--accent) 0 var(--progress),
+    var(--surface-2) var(--progress) 100%
+  );
+}
+.track-line::-webkit-slider-thumb {
+  width: 12px;
+  height: 18px;
+  margin-top: -7px;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface);
+}
+.track-line::-moz-range-track {
+  height: 4px;
   border: 1px solid var(--line);
   background: var(--surface-2);
 }
-.track-progress {
-  display: block;
-  width: var(--progress);
-  height: 100%;
+.track-line::-moz-range-progress {
+  height: 4px;
   background: var(--accent);
 }
+.track-line::-moz-range-thumb {
+  width: 12px;
+  height: 18px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface);
+}
 .track-time {
+  min-width: 6.7rem;
   font-family: "Courier New",Courier,monospace;
   font-size: .63rem;
+  text-align: right;
+  white-space: nowrap;
+}
+.player-message {
+  min-height: 1.2em;
+  margin: .55rem 0 0;
+  color: var(--muted)!important;
+  font-family: "Courier New",Courier,monospace;
+  font-size: .65rem!important;
 }
 .project-meta {
   display: grid;
@@ -676,6 +731,13 @@ blockquote {
   }
   .widget-music {
     order: 3;
+  }
+  .music-bar {
+    grid-template-columns: repeat(3,44px) minmax(80px,1fr);
+  }
+  .track-time {
+    grid-column: 1/-1;
+    justify-self: end;
   }
   .widget-project {
     order: 4;
