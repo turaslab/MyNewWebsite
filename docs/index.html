@@ -46,28 +46,28 @@
 
   <main id="main" class="lab-grid" tabindex="-1">
     <article class="widget widget-blog span-7 row-2" aria-labelledby="blog-title">
-      <div class="widget-topline"><span class="eyebrow">01 / Yazı odası</span><a href="blog/">Bütün yazılar ↗</a></div>
+      <div class="widget-topline"><span class="eyebrow">01 / Yazı odası</span><a href="blog.html">Bütün yazılar ↗</a></div>
       <div class="blog-preview">
         <div>
-          <p class="status-line"><span class="signal"></span> İlk not hazırlanıyor</p>
-          <h1 id="blog-title">Burası sonuçlardan çok izlerin tutulduğu yer.</h1>
-          <p>Oynadıklarım, dinlediklerim, üzerinde çalıştıklarım ve aklımda kalmasını istediğim küçük şeyler. İlk kişisel yazı geldiğinde bu oda onunla açılacak.</p>
+          <p class="status-line" data-latest-blog-status><span class="signal"></span> İlk not hazırlanıyor</p>
+          <h1 id="blog-title" data-latest-blog-title>Burası sonuçlardan çok izlerin tutulduğu yer.</h1>
+          <p data-latest-blog-summary>Oynadıklarım, dinlediklerim, üzerinde çalıştıklarım ve aklımda kalmasını istediğim küçük şeyler. İlk kişisel yazı geldiğinde bu oda onunla açılacak.</p>
         </div>
-        <a class="text-action" href="blog/">Yazı odasını aç <span aria-hidden="true">→</span></a>
+        <a class="text-action" href="blog.html" data-latest-blog-link>Yazı odasını aç <span aria-hidden="true">→</span></a>
       </div>
       <div class="index-stamp" aria-hidden="true">LOG<br>000</div>
     </article>
 
     <section class="widget widget-games span-5" aria-labelledby="games-title">
-      <div class="widget-topline"><span class="eyebrow">02 / Oyun kütüphanesi</span><a href="games/">Kütüphaneye git ↗</a></div>
+      <div class="widget-topline"><span class="eyebrow">02 / Oyun kütüphanesi</span><a href="games.html">Kütüphaneye git ↗</a></div>
       <div class="game-display">
         <div class="game-viewport" aria-hidden="true"><span class="horizon"></span><span class="road"></span><span class="cursor-car"></span></div>
-        <div><span class="data-label">SELECTED SAVE</span><h2 id="games-title">İlk kayıt için boş yuva</h2><p>Bitirilenler, yarım kalanlar ve akılda kalan küçük notlar burada birikecek.</p></div>
+        <div><span class="data-label">SELECTED SAVE</span><h2 id="games-title" data-latest-game-title>İlk kayıt için boş yuva</h2><p data-latest-game-summary>Bitirilenler, yarım kalanlar ve akılda kalan küçük notlar burada birikecek.</p></div>
       </div>
     </section>
 
     <section class="widget widget-music span-5" aria-labelledby="music-title">
-      <div class="widget-topline"><span class="eyebrow">03 / Müzik</span><a href="music/">Arşivi aç ↗</a></div>
+      <div class="widget-topline"><span class="eyebrow">03 / Müzik</span><a href="music.html">Arşivi aç ↗</a></div>
       <div class="music-copy"><p class="track-kicker">NOW PLAYING / IDLE</p><h2 id="music-title">İğne henüz plağa değmedi.</h2><p>Redd'den city pop'a, arabeskten midwest emo'ya uzanan raf hazırlanıyor.</p></div>
       <div class="music-bar" role="group" aria-label="Müzik çalar">
         <button type="button" class="player-button" aria-label="Parçayı oynat" disabled>▶</button>
@@ -76,7 +76,7 @@
     </section>
 
     <section class="widget widget-project span-4" aria-labelledby="project-title">
-      <div class="widget-topline"><span class="eyebrow">04 / Tezgâhta</span><a href="projects/">Ne yaptım? ↗</a></div>
+      <div class="widget-topline"><span class="eyebrow">04 / Tezgâhta</span><a href="projects.html">Ne yaptım? ↗</a></div>
       <p class="status-line"><span class="signal signal-live"></span> Devam ediyor</p>
       <h2 id="project-title">Tura's Lab</h2>
       <p>Bu köşenin kendisi ilk proje: daha kişisel, daha kullanışlı ve zamanla genişleyen bir internet evi.</p>
@@ -94,11 +94,11 @@
       <div class="widget-topline"><span class="eyebrow">06 / Site ağacı</span><span class="data-label">5 ROOMS</span></div>
       <h2 id="map-title" class="visually-hidden">Site bölümleri</h2>
       <ol class="room-list">
-        <li><a href="blog/"><span>01</span> Blog <em>kişisel notlar</em></a></li>
-        <li><a href="games/"><span>02</span> Oyunlar <em>kütüphane</em></a></li>
-        <li><a href="music/"><span>03</span> Müzik <em>albüm rafı</em></a></li>
-        <li><a href="projects/"><span>04</span> Projeler <em>tezgâhtakiler</em></a></li>
-        <li><a href="about/"><span>05</span> Hakkında <em>Tura kim?</em></a></li>
+        <li><a href="blog.html"><span>01</span> Blog <em>kişisel notlar</em></a></li>
+        <li><a href="games.html"><span>02</span> Oyunlar <em>kütüphane</em></a></li>
+        <li><a href="music.html"><span>03</span> Müzik <em>albüm rafı</em></a></li>
+        <li><a href="projects.html"><span>04</span> Projeler <em>tezgâhtakiler</em></a></li>
+        <li><a href="about.html"><span>05</span> Hakkında <em>Tura kim?</em></a></li>
       </ol>
     </nav>
 
@@ -108,7 +108,7 @@
     </aside>
 
     <section class="widget widget-about span-5" aria-labelledby="about-title">
-      <div class="widget-topline"><span class="eyebrow">07 / Kısa tanışma</span><a href="about/">Devamı ↗</a></div>
+      <div class="widget-topline"><span class="eyebrow">07 / Kısa tanışma</span><a href="about.html">Devamı ↗</a></div>
       <h2 id="about-title">Selam, ben Tura.</h2><p>Burada ne sevdiğimi, ne yaptığımı ve internette kaybolmasını istemediğim şeyleri biriktiriyorum.</p>
     </section>
   </main>

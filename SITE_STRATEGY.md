@@ -53,14 +53,14 @@ Ana sayfa bir karşılama metniyle alanı tüketmeyecek; kimliği kısa açıkla
 
 ### İlk sürüm
 
-- `/` — Lab / ana grid
-- `/blog` — bütün kişisel yazılar
-- `/blog/[slug]` — yazı ayrıntısı
-- `/games` — oyun kütüphanesi
-- `/music` — müzik ve albüm kütüphanesi
-- `/projects` — yapılan işler ve üretim dokümantasyonu
-- `/about` — kısa kimlik, yaklaşım ve bağlantılar
-- `/rss.xml` — güncel yazı akışı
+- `index.html` — Lab / ana grid
+- `blog.html` — bütün kişisel yazılar
+- `blog.html?post=[slug]` — Markdown yazı ayrıntısı
+- `games.html` — oyun kütüphanesi
+- `music.html` — müzik ve albüm kütüphanesi
+- `projects.html` — yapılan işler ve üretim dokümantasyonu
+- `about.html` — kısa kimlik, yaklaşım ve bağlantılar
+- `rss.xml` — güncel yazı akışı
 
 ### Sonraki odalar
 
@@ -119,15 +119,15 @@ Kontroller köşeli, metin ağırlıklı ve bağlama yerleşik olacak; yuvarlak 
 
 ## 10. İçerik Modeli
 
-- Blog yazıları: Markdown/MDX dosyaları.
+- Blog yazıları: `blog/` içindeki Markdown dosyaları.
 - Oyun, müzik ve sonraki kütüphaneler: doğrulanmış alanlara sahip düzenli veri kayıtları.
 - Projeler: kısa özet, tarih, rol, süreç, teknoloji ve bağlantı alanları.
-- Widget'lar: bu kaynaklardan en güncel veya küratör tarafından seçilen kaydı otomatik çeker.
+- Widget'lar: `blog/index.json` ve `games/index.json` içindeki Markdown kayıtlarından en güncel veya seçilen kaydı çeker.
 - Yönetim paneli: ilk sürüm dışında; gerçek içerik hacmi dosya yönetimini zorlaştırırsa yeniden değerlendirilir.
 
 ## 11. Teknik Yön
 
-Mevcut saf HTML/CSS taslağı fikir prototipi olarak korunabilir; fakat çok sayfalı içerik, Markdown, otomatik RSS ve tema sistemi için statik site üretimi uygun olacaktır.
+Site, `docs/` klasöründen Live Server ile çalışan saf HTML/CSS/JavaScript olarak kalır. Markdown yazıları tarayıcıda okunur; RSS şimdilik elle güncellenir. İçerik miktarı gerçekten büyürse bu düzen bozulmadan küçük bir üretim betiği sonradan eklenebilir.
 
 Önerilen yaklaşım: içerik odaklı, az istemci JavaScript'i kullanan statik bir mimari. Pomodoro, müzik çubuğu ve tema seçici yalnızca ihtiyaç duydukları kadar etkileşim kodu yükler. Nihai teknoloji kararı uygulama öncesi mevcut kodun dönüşüm maliyetiyle birlikte verilecek.
 
