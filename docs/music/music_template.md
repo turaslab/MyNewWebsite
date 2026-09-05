@@ -9,7 +9,7 @@ summary: Müzik listesinde görünecek kısa kişisel not.
 favorite: false
 
 # Kapak kullanmayacaksan image ve image_alt alanlarını boş bırakabilirsin.
-image: images/music/album-kapagi.jpg
+image: ../media/images/music/album-kapagi.jpg
 image_alt: Albüm kapağının kısa açıklaması.
 
 # true yaparsan kayıt dosyada kalır fakat sitede görünmez.

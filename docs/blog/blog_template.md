@@ -6,7 +6,7 @@ summary: Ana sayfada ve blog listesinde görünecek kısa açıklama.
 tags: günlük, oyun
 
 # Kapak kullanmayacaksan image ve image_alt alanlarını boş bırakabilirsin.
-image: images/blog/ornek-fotograf.jpg
+image: ../media/images/blog/ornek-fotograf.jpg
 image_alt: Fotoğrafı göremeyenler için kısa açıklama.
 
 # true yaparsan yazı dosyada kalır fakat sitede görünmez.

@@ -8,7 +8,7 @@ summary: Bu oyunla ilgili listede görünecek kısa kişisel not.
 favorite: false
 
 # Kapak kullanmayacaksan image ve image_alt alanlarını boş bırakabilirsin.
-image: images/games/oyun-kapak.jpg
+image: ../media/images/games/oyun-kapak.jpg
 image_alt: Oyun görselinin kısa açıklaması.
 
 # true yaparsan kayıt dosyada kalır fakat sitede görünmez.

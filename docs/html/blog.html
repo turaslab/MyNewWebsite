@@ -4,23 +4,30 @@
     <!-- Sayfa bilgileri -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
     <meta
       name="description"
-      content="Tura'nın oyun kütüphanesi ve kişisel oyun notları."
+      content="Tura'nın kişisel yazıları ve üretim notları."
     >
-    <meta property="og:title" content="Oyun Kütüphanesi — Tura's Lab">
+    <meta property="og:title" content="Blog — Tura's Lab">
     <meta
       property="og:description"
-      content="Bitirilenler, yarım kalanlar ve akılda kalanlar."
+      content="Kişisel yazılar ve üretim notları."
     >
-    <meta property="og:image" content="https://tugratunc.me/og.png">
+    <meta property="og:image" content="https://tugratunc.me/media/images/general/og.png">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Oyun Kütüphanesi — Tura's Lab</title>
+    <title>Blog — Tura's Lab</title>
 
     <!-- Ortak site dosyaları -->
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Tura's Lab RSS"
+      href="../rss.xml"
+    >
+    <link rel="icon" href="../media/images/general/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
   </head>
 
   <body>
@@ -36,11 +43,13 @@
         </span>
         <span>
           <strong>Tura's Lab</strong>
-          <small>room / games</small>
+          <small>room / blog</small>
         </span>
       </a>
 
-      <p class="identity">Bitirilenler, yarım kalanlar ve akılda kalanlar.</p>
+      <p class="identity">
+        Kişisel notlar, düşünceler ve yapılan şeylerin izleri.
+      </p>
 
       <div class="header-tools">
         <label class="theme-control" for="theme-select">
@@ -53,7 +62,7 @@
             <option value="lowpoly">Low Poly Memory</option>
           </select>
         </label>
-        <a class="utility-link" href="rss.xml">RSS ↗</a>
+        <a class="utility-link" href="../rss.xml">RSS ↗</a>
       </div>
     </header>
 
@@ -62,49 +71,52 @@
       <nav class="breadcrumbs" aria-label="Sayfa yolu">
         <a href="index.html">Lab</a>
         <span>/</span>
-        <span>Oyunlar</span>
+        <span>Blog</span>
       </nav>
 
       <!-- Oda başlığı -->
       <header class="room-header">
         <div>
-          <span class="room-code">Room 02 / memory card</span>
-          <h1>Oyunlar</h1>
+          <span class="room-code">Room 01 / writable</span>
+          <h1>Blog</h1>
         </div>
         <p>
-          Puan tablosundan çok kişisel hafıza: nerede oynandı, ne bıraktı ve
-          neden hâlâ hatırlanıyor?
+          Akademik görünmek için değil; unutulmaması gereken şeyleri, kişisel
+          düşünceleri ve bazen bir işin nasıl ortaya çıktığını kaydetmek için.
         </p>
       </header>
 
-      <!-- Oyun arşivi -->
-      <div class="archive-grid" data-library="games">
-        <!-- JavaScript bu alanı games/index.json dosyasından doldurur. -->
+      <!-- Blog arşivi -->
+      <div class="archive-grid" data-library="blog">
+        <!-- JavaScript bu alanı blog/index.json dosyasından doldurur. -->
         <section class="panel wide">
           <div class="widget-topline">
-            <span class="eyebrow">Oyun kayıtları</span>
+            <span class="eyebrow">Yazı arşivi</span>
             <span class="data-label" data-library-count>yükleniyor</span>
           </div>
           <div data-library-list>
-            <p>Kayıtlar okunuyor…</p>
+            <p>Yazılar okunuyor…</p>
           </div>
         </section>
 
         <!-- Yeni içerik ekleme hatırlatıcısı -->
-        <aside class="panel shelf-note">
-          <span class="shelf-number">02</span>
-          <div>
-            <h2>Bir skor sitesi değil.</h2>
-            <p>
-              Yeni kayıt için <code>games/game_template.md</code> dosyasını
-              kopyala ve adını <code>games/index.json</code> listesine ekle.
-            </p>
+        <aside class="panel">
+          <span class="room-code">Yeni yazı eklemek</span>
+          <h2>Bir Markdown dosyası.</h2>
+          <p>
+            <code>blog/blog_template.md</code> dosyasını kopyala, içini doldur
+            ve adını <code>blog/index.json</code> listesine ekle.
+          </p>
+          <div class="tag-row">
+            <span class="tag">not</span>
+            <span class="tag">günlük</span>
+            <span class="tag">yapım süreci</span>
           </div>
         </aside>
 
-        <!-- Seçilen Markdown oyun kaydı burada açılır. -->
+        <!-- Seçilen Markdown yazısı burada açılır. -->
         <article class="panel full markdown-reader" data-library-reader hidden>
-          <a class="reader-back" href="games.html">← Bütün oyunlar</a>
+          <a class="reader-back" href="blog.html">← Bütün yazılar</a>
           <header class="reader-header">
             <span class="room-code" data-reader-meta></span>
             <h2 data-reader-title></h2>
@@ -123,7 +135,7 @@
 
       <!-- Diğer odalar -->
       <nav class="room-nav" aria-label="Diğer odalar">
-        <a href="blog.html">Blog →</a>
+        <a href="games.html">Oyunlar →</a>
         <a href="music.html">Müzik →</a>
         <a href="projects.html">Projeler →</a>
         <a href="about.html">Hakkında →</a>
@@ -133,7 +145,7 @@
     <!-- Alt bilgi -->
     <footer class="site-footer frame">
       <p>© <span data-current-year>2026</span> Tura's Lab</p>
-      <p>Room 02 / Games</p>
+      <p>Room 01 / Blog</p>
       <a href="index.html">Lab'e dön ↑</a>
     </footer>
   </body>

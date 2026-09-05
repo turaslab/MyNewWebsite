@@ -359,14 +359,14 @@ async function setupMusicPlayer() {
   });
 
   try {
-    const response = await fetch('music/playlist.json', { cache: 'no-store' });
+    const response = await fetch('../music/playlist.json', { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error('music/playlist.json okunamadı');
     }
 
     const playlist = await response.json();
-    const safeAudioPath = /^audio\/music\/[A-Za-z0-9._/-]+\.(?:aac|m4a|mp3|ogg|wav)$/i;
+    const safeAudioPath = /^\.\.\/media\/audio\/music\/[A-Za-z0-9._/-]+\.(?:aac|m4a|mp3|ogg|wav)$/i;
 
     tracks = Array.isArray(playlist.tracks)
       ? playlist.tracks.filter((track) => {
@@ -442,7 +442,7 @@ function parseFrontMatter(source) {
 function inlineMarkdown(value) {
   return escapeHtml(value)
     .replace(
-      /!\[([^\]]*)\]\((images\/[A-Za-z0-9._/-]+\.(?:avif|gif|jpe?g|png|webp))\)/gi,
+      /!\[([^\]]*)\]\((\.\.\/media\/images\/[A-Za-z0-9._/-]+\.(?:avif|gif|jpe?g|png|webp))\)/gi,
       '<img class="markdown-image" src="$2" alt="$1" loading="lazy">',
     )
     .replace(
@@ -531,7 +531,7 @@ function getCollectionConfig(kind) {
 
 async function getCollection(kind) {
   const config = getCollectionConfig(kind);
-  const manifestResponse = await fetch(`${kind}/index.json`, {
+  const manifestResponse = await fetch(`../${kind}/index.json`, {
     cache: 'no-store',
   });
 
@@ -548,7 +548,7 @@ async function getCollection(kind) {
 
   const records = await Promise.all(
     filenames.map(async (filename) => {
-      const response = await fetch(`${kind}/${filename}`, {
+      const response = await fetch(`../${kind}/${filename}`, {
         cache: 'no-store',
       });
 
@@ -635,7 +635,7 @@ function renderRecordList(container, kind, records) {
 
   records.forEach((record, index) => {
     const item = document.createElement('li');
-    const imageIsSafe = /^images\/[A-Za-z0-9._/-]+\.(avif|gif|jpe?g|png|webp)$/i.test(
+    const imageIsSafe = /^\.\.\/media\/images\/[A-Za-z0-9._/-]+\.(avif|gif|jpe?g|png|webp)$/i.test(
       record.meta.image || '',
     );
     const image = imageIsSafe
@@ -688,7 +688,7 @@ function renderReader(root, kind, records) {
     record.meta.summary || '';
 
   const cover = reader.querySelector('[data-reader-image]');
-  const imageIsSafe = /^images\/[A-Za-z0-9._/-]+\.(avif|gif|jpe?g|png|webp)$/i.test(
+  const imageIsSafe = /^\.\.\/media\/images\/[A-Za-z0-9._/-]+\.(avif|gif|jpe?g|png|webp)$/i.test(
     record.meta.image || '',
   );
 
