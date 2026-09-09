@@ -146,76 +146,21 @@
         </div>
       </section>
 
-      <!-- 03: Müzik arşivi -->
+      <!-- 03: Radyo özeti. Yayın bağlantısı sonraki adımda eklenecek. -->
       <section
         class="widget widget-music span-5"
         aria-labelledby="music-title"
-        data-music-player
+        data-radio-summary
       >
         <div class="widget-topline">
           <span class="eyebrow">03 / Müzik</span>
-          <a href="music.html">Arşivi aç ↗</a>
+          <a href="music.html#radio">Müzik odası ↗</a>
         </div>
 
         <div class="music-copy">
-          <p class="track-kicker" data-player-status aria-live="polite">
-            LAB RADIO / YÜKLENİYOR
-          </p>
-          <h2 id="music-title" data-player-title>Kaset takılıyor.</h2>
-          <p data-player-artist>Çalma listesi hazırlanıyor…</p>
+          <p class="track-kicker">LAB RADIO / ŞU AN ÇALAN</p>
+          <h2 id="music-title" data-radio-title>Radyo hazırlanıyor.</h2>
         </div>
-
-        <!-- Gerçek ses dosyalarını çalan ana sayfa müzik çaları -->
-        <audio data-player-audio preload="metadata"></audio>
-        <div class="music-bar" role="group" aria-label="Müzik çalar kontrolleri">
-          <button
-            type="button"
-            class="player-button"
-            data-player="previous"
-            aria-label="Önceki parça"
-            disabled
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            class="player-button"
-            data-player="toggle"
-            aria-label="Parçayı oynat"
-            aria-pressed="false"
-            disabled
-          >
-            ▶
-          </button>
-          <button
-            type="button"
-            class="player-button"
-            data-player="next"
-            aria-label="Sonraki parça"
-            disabled
-          >
-            →
-          </button>
-
-          <label class="visually-hidden" for="player-seek">
-            Parçada ilerle
-          </label>
-          <input
-            id="player-seek"
-            class="track-line"
-            data-player="seek"
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            step="0.1"
-            style="--progress: 0%"
-            disabled
-          >
-          <time class="track-time" data-player-time>00:00 / 00:00</time>
-        </div>
-
-        <p class="player-message" data-player-message aria-live="polite"></p>
       </section>
 
       <!-- 04: Güncel proje -->

@@ -217,7 +217,7 @@ function formatPlayerTime(seconds) {
 async function setupMusicPlayer() {
   const root = document.querySelector('[data-music-player]');
 
-  // Müzik çaları yalnızca ana sayfa içerir.
+  // Dosyalardan çalan kasetçalar müzik odasında bulunur.
   if (!root) {
     return;
   }
@@ -244,7 +244,7 @@ async function setupMusicPlayer() {
       isPlaying ? 'Parçayı duraklat' : 'Parçayı oynat',
     );
     toggle.setAttribute('aria-pressed', String(isPlaying));
-    status.textContent = isPlaying ? 'LAB RADIO / ÇALIYOR' : 'LAB RADIO / HAZIR';
+    status.textContent = isPlaying ? 'KASETÇALAR / ÇALIYOR' : 'KASETÇALAR / HAZIR';
   };
 
   const updateProgress = () => {
@@ -281,7 +281,7 @@ async function setupMusicPlayer() {
 
     title.textContent = track.title;
     artist.textContent = track.artist;
-    status.textContent = 'LAB RADIO / HAZIRLANIYOR';
+    status.textContent = 'KASETÇALAR / HAZIRLANIYOR';
     message.textContent = '';
     toggle.disabled = true;
     seek.disabled = true;
@@ -352,7 +352,7 @@ async function setupMusicPlayer() {
     }
   });
   audio.addEventListener('error', () => {
-    status.textContent = 'LAB RADIO / HATA';
+    status.textContent = 'KASETÇALAR / HATA';
     message.textContent = 'Ses dosyası açılamadı. Çalma listesindeki yolu kontrol et.';
     toggle.disabled = true;
     seek.disabled = true;
@@ -375,7 +375,7 @@ async function setupMusicPlayer() {
       : [];
 
     if (!tracks.length) {
-      status.textContent = 'LAB RADIO / BOŞ';
+      status.textContent = 'KASETÇALAR / BOŞ';
       title.textContent = 'Çalma listesi boş.';
       artist.textContent = 'music/playlist.json dosyasına ilk parçayı ekle.';
       message.textContent = '';
@@ -391,7 +391,7 @@ async function setupMusicPlayer() {
     next.disabled = !hasMultipleTracks;
     loadTrack(initialIndex);
   } catch (error) {
-    status.textContent = 'LAB RADIO / HATA';
+    status.textContent = 'KASETÇALAR / HATA';
     title.textContent = 'Çalma listesi okunamadı.';
     artist.textContent = 'Yerel sunucuyu ve playlist dosyasını kontrol et.';
     message.textContent = '';

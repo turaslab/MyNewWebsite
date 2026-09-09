@@ -825,6 +825,18 @@ blockquote {
   font-size: .7rem;
   text-transform: uppercase;
 }
+/* Müzik odası: radyo, kasetçalar ve aşağıdaki albüm rafı. */
+.listening-room {
+  display: grid;
+  gap: clamp(12px,1.4vw,20px);
+  margin-bottom: clamp(12px,1.4vw,20px);
+}
+.listening-room > * {
+  min-width: 0;
+}
+.listening-room h2,[data-radio-summary] h2 {
+  overflow-wrap: anywhere;
+}
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(12,minmax(0,1fr));
