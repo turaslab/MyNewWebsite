@@ -19,6 +19,7 @@
     <link rel="icon" href="../media/images/general/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/main.js" defer></script>
+    <script src="../js/radio.js" defer></script>
   </head>
 
   <body>
@@ -77,12 +78,14 @@
 
       <!-- Dinleme alanı: canlı radyo ve dosyalardan çalan kasetçalar. -->
       <div class="listening-room">
-        <!-- Radio Bridge bağlantısı kurulunca gerçek yayın burada görünecek. -->
+        <!-- Canlı yayın bilgisi. Sesli YouTube oynatma sonraki adımda eklenecek. -->
         <section id="radio" class="panel" aria-labelledby="radio-title" data-radio-room>
           <div class="widget-topline">
             <span class="eyebrow">Lab Radio</span>
+            <span class="data-label" data-radio-status role="status">BAĞLANIYOR</span>
           </div>
-          <h2 id="radio-title" data-radio-title>Radyo hazırlanıyor.</h2>
+          <h2 id="radio-title" data-radio-title>Yayın bilgisi alınıyor.</h2>
+          <p data-radio-channel hidden></p>
         </section>
 
         <!-- Mevcut ses dosyaları aynı playlist.json üzerinden çalmaya devam eder. -->

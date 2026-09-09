@@ -40,6 +40,7 @@
     <link rel="icon" href="../media/images/general/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/main.js" defer></script>
+    <script src="../js/radio.js" defer></script>
   </head>
 
   <body>
@@ -146,7 +147,7 @@
         </div>
       </section>
 
-      <!-- 03: Radyo özeti. Yayın bağlantısı sonraki adımda eklenecek. -->
+      <!-- 03: Radyo sunucusundan gelen güncel şarkı bilgisi. -->
       <section
         class="widget widget-music span-5"
         aria-labelledby="music-title"
@@ -158,8 +159,8 @@
         </div>
 
         <div class="music-copy">
-          <p class="track-kicker">LAB RADIO / ŞU AN ÇALAN</p>
-          <h2 id="music-title" data-radio-title>Radyo hazırlanıyor.</h2>
+          <p class="track-kicker" data-radio-status role="status">LAB RADIO / BAĞLANIYOR</p>
+          <h2 id="music-title" data-radio-title>Yayın bilgisi alınıyor.</h2>
         </div>
       </section>
 
