@@ -14,6 +14,11 @@
   let retryDelay = 1000;
   let suspended = false;
 
+  // Yalnız müzik odasındaki oynatıcı bu salt okunur olayları dinler.
+  function notifyPlayer(state = null) {
+    window.dispatchEvent(new CustomEvent('lab-radio-state', { detail: state }));
+  }
+
   function render(status, title, channel = '') {
     panels.forEach((panel) => {
       const label = panel.querySelector('[data-radio-status]');
@@ -35,6 +40,7 @@
     if (!state || typeof state !== 'object') return false;
     if (state.live === false && state.state === 'offline') {
       render('YAYIN YOK', 'Şu an yayın yok.');
+      notifyPlayer(state);
       return true;
     }
 
@@ -42,16 +48,20 @@
     if (typeof state.videoId !== 'string' || !/^[\w-]{11}$/.test(state.videoId)) return false;
     if (typeof state.title !== 'string' || state.title.length > 1000) return false;
     if (state.channel != null && typeof state.channel !== 'string') return false;
+    if (!Number.isFinite(state.sourcePosition) || state.sourcePosition < 0) return false;
+    if (typeof state.sourceTimestamp !== 'string' || !Number.isFinite(Date.parse(state.sourceTimestamp))) return false;
 
     render(
       state.state === 'playing' ? 'ŞU AN ÇALAN' : 'YAYIN DURAKLATILDI',
       state.title.trim() || 'İsimsiz parça',
       (state.channel || '').slice(0, 500),
     );
+    notifyPlayer(state);
     return true;
   }
 
   function disconnect() {
+    notifyPlayer();
     clearTimeout(connectionTimer);
     connectionTimer = null;
     const previous = socket;

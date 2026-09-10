@@ -19,6 +19,7 @@
     <link rel="icon" href="../media/images/general/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/main.js" defer></script>
+    <script src="../js/radio-player.js" defer></script>
     <script src="../js/radio.js" defer></script>
   </head>
 
@@ -78,7 +79,7 @@
 
       <!-- Dinleme alanı: canlı radyo ve dosyalardan çalan kasetçalar. -->
       <div class="listening-room">
-        <!-- Canlı yayın bilgisi. Sesli YouTube oynatma sonraki adımda eklenecek. -->
+        <!-- Görünür YouTube oynatıcısı yalnız ziyaretçi başlatınca yüklenir. -->
         <section id="radio" class="panel" aria-labelledby="radio-title" data-radio-room>
           <div class="widget-topline">
             <span class="eyebrow">Lab Radio</span>
@@ -86,6 +87,15 @@
           </div>
           <h2 id="radio-title" data-radio-title>Yayın bilgisi alınıyor.</h2>
           <p data-radio-channel hidden></p>
+          <div class="radio-controls">
+            <button type="button" class="player-button" data-radio-start disabled>Radyoyu başlat</button>
+            <button type="button" class="player-button" data-radio-stop disabled>Dinlemeyi durdur</button>
+          </div>
+          <p class="player-message" data-radio-message role="status">Yayın bekleniyor.</p>
+          <div class="radio-video" data-radio-video hidden>
+            <div id="radio-youtube-player"></div>
+          </div>
+          <p class="radio-note">Ses YouTube üzerinden çalar. Dinleme bu sayfada sürer; reklamlar ve bağlantı koşulları senkronu etkileyebilir.</p>
         </section>
 
         <!-- Mevcut ses dosyaları aynı playlist.json üzerinden çalmaya devam eder. -->

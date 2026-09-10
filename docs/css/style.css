@@ -831,6 +831,35 @@ blockquote {
   gap: clamp(12px,1.4vw,20px);
   margin-bottom: clamp(12px,1.4vw,20px);
 }
+
+/* Radyo: YouTube görünür kalır; kontroller videonun üstünü örtmez. */
+.radio-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-block: 18px 10px;
+}
+.radio-controls .player-button {
+  width: auto;
+  min-height: 44px;
+  padding: 8px 14px;
+}
+.radio-video {
+  margin-top: 16px;
+  width: 100%;
+}
+.radio-video iframe {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+.radio-note {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
 .listening-room > * {
   min-width: 0;
 }
