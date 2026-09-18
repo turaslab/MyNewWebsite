@@ -765,6 +765,7 @@ blockquote {
     grid-template-columns: 1fr;
   }
 }
+
 /* Hareket azaltma tercihi olan ziyaretçiler için animasyonları sınırla. */
 
 @media(prefers-reduced-motion:reduce) {
@@ -1003,9 +1004,7 @@ blockquote {
   border-bottom: 1px solid var(--line-soft);
 }
 .manifest li::before {
-  content: "→";
-  margin-right: .55rem;
-  color: var(--accent);
+  content: none;
 }
 .link-list {
   display: grid;
@@ -1827,5 +1826,71 @@ h2,
   .site-footer {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+}
+
+/* Son görsel ayar: çerçeveleri önceki kalınlığın yaklaşık 2/3'üne indir. */
+:root {
+  --outline-weight: .67px;
+  --outline-gap: 1.33px;
+}
+
+.site-header,
+.site-header .brand-mark,
+.site-header .theme-control select,
+.site-header .utility-link,
+.site-sidebar,
+.profile-mark,
+.sidebar-label,
+.sidebar-clock,
+.side-block,
+.side-outline-list li,
+.widget,
+.panel,
+.widget-topline,
+.signal,
+.game-viewport,
+.player-button,
+.timer-controls button,
+.site-footer,
+.breadcrumbs,
+.room-header,
+.room-nav,
+.room-nav a,
+.record-list,
+.game-list,
+.record-list li,
+.game-list li,
+.tag,
+.record-thumb,
+.reader-header,
+.reader-cover,
+.markdown-image,
+.markdown-body code,
+.panel code {
+  border-width: var(--outline-weight);
+}
+
+.site-sidebar,
+.side-block,
+.widget,
+.panel {
+  outline-width: var(--outline-weight);
+  outline-offset: var(--outline-gap);
+}
+
+.music-bar {
+  grid-template-columns: repeat(3,max-content) minmax(90px,1fr) auto;
+}
+
+.player-button {
+  width: auto;
+  min-width: 44px;
+  padding-inline: .65rem;
+}
+
+@media(max-width:680px) {
+  .music-bar {
+    grid-template-columns: repeat(3,max-content) minmax(72px,1fr);
   }
 }

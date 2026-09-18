@@ -278,7 +278,7 @@ async function setupMusicPlayer() {
 
   const updateToggleButton = () => {
     const isPlaying = !audio.paused;
-    toggle.textContent = isPlaying ? 'Ⅱ' : '▶';
+    toggle.textContent = isPlaying ? 'Duraklat' : 'Oynat';
     toggle.setAttribute(
       'aria-label',
       isPlaying ? 'Parçayı duraklat' : 'Parçayı oynat',
@@ -302,7 +302,7 @@ async function setupMusicPlayer() {
       await audio.play();
       message.textContent = '';
     } catch (error) {
-      message.textContent = 'Tarayıcı oynatmayı engelledi; yeniden ▶ düğmesine bas.';
+      message.textContent = 'Tarayıcı oynatmayı engelledi; yeniden Oynat düğmesine bas.';
       console.error(error);
     }
   };
