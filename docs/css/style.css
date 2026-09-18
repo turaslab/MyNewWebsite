@@ -1835,6 +1835,11 @@ h2,
   --outline-gap: 1.33px;
 }
 
+:root,[data-theme] {
+  --line: color-mix(in srgb,var(--ink) 67%,transparent);
+  --line-soft: color-mix(in srgb,var(--ink) 38%,transparent);
+}
+
 .site-header,
 .site-header .brand-mark,
 .site-header .theme-control select,
@@ -1875,6 +1880,7 @@ h2,
 .side-block,
 .widget,
 .panel {
+  outline-color: color-mix(in srgb,var(--ink) 22%,transparent);
   outline-width: var(--outline-weight);
   outline-offset: var(--outline-gap);
 }
