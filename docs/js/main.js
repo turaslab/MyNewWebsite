@@ -3,11 +3,8 @@
 // ------------------------------------------------------------
 
 const THEMES = new Set([
-  'paper',
-  'garage',
-  'citypop',
-  'lounge',
-  'lowpoly',
+  'mono',
+  'cyan',
 ]);
 
 const THEME_KEY = 'turas-lab-theme';
@@ -72,7 +69,8 @@ const COLLECTIONS = {
 // ------------------------------------------------------------
 
 function applyTheme(theme) {
-  const safeTheme = THEMES.has(theme) ? theme : 'paper';
+  const migratedTheme = theme === 'lowpoly' ? 'cyan' : theme;
+  const safeTheme = THEMES.has(migratedTheme) ? migratedTheme : 'mono';
 
   document.documentElement.dataset.theme = safeTheme;
   localStorage.setItem(THEME_KEY, safeTheme);
@@ -84,7 +82,7 @@ function applyTheme(theme) {
 }
 
 function setupTheme() {
-  applyTheme(localStorage.getItem(THEME_KEY) || 'paper');
+  applyTheme(localStorage.getItem(THEME_KEY) || 'mono');
 
   document.querySelector('#theme-select')?.addEventListener('change', (event) => {
     applyTheme(event.target.value);

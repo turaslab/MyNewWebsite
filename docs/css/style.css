@@ -3,90 +3,41 @@
    Yeni bir tema eklemek için aynı değişkenleri yeni seçicide tanımla.
    ------------------------------------------------------------ */
 
-:root,[data-theme="paper"] {
-  color-scheme: light;
-  --page: #e8e3d7;
-  --page-grid: rgba(39,37,31,.045);
-  --surface: #f8f5ec;
-  --surface-2:#efe9dc;
-  --ink: #27251f;
-  --muted: #6e685e;
-  --line: #302e28;
-  --line-soft: #b7b0a2;
-  --accent: #8b2f2f;
-  --accent-2:#2f6265;
-  --signal: #b24c38;
-  --shadow: #27251f;
-  --selection: #c9d5cf;
-  --texture-opacity: .22;
-}
-[data-theme="garage"] {
+:root,[data-theme="mono"] {
   color-scheme: dark;
-  --page: #171a1b;
-  --page-grid: rgba(215,213,199,.04);
-  --surface: #222628;
-  --surface-2:#2b3032;
-  --ink: #e5e0d2;
-  --muted: #aaa597;
-  --line: #d2cabb;
-  --line-soft: #555b5b;
-  --accent: #d58542;
-  --accent-2:#78999a;
-  --signal: #e1a143;
-  --shadow: #080909;
-  --selection: #51402f;
-  --texture-opacity: .14;
+  --page: #000;
+  --page-grid: transparent;
+  --surface: #000;
+  --surface-2: #111;
+  --ink: #f5f5f5;
+  --muted: #c0c0c0;
+  --outline-tone: #f5f5f5;
+  --line: #f5f5f5;
+  --line-soft: #777;
+  --accent: #fff;
+  --accent-2: #444;
+  --signal: #fff;
+  --shadow: #000;
+  --selection: #fff;
+  --texture-opacity: 0;
 }
-[data-theme="citypop"] {
-  color-scheme: light;
-  --page: #dce8e7;
-  --page-grid: rgba(23,65,77,.055);
-  --surface: #fff7e8;
-  --surface-2:#f1d9c8;
-  --ink: #183a43;
-  --muted: #536c70;
-  --line: #183a43;
-  --line-soft: #9bb6b5;
-  --accent: #c95748;
-  --accent-2:#2c7582;
-  --signal: #e26f55;
-  --shadow: #183a43;
-  --selection: #f4c6b9;
-  --texture-opacity: .16;
-}
-[data-theme="lounge"] {
+[data-theme="cyan"] {
   color-scheme: dark;
-  --page: #261918;
-  --page-grid: rgba(227,204,156,.04);
-  --surface: #38221f;
-  --surface-2:#462b27;
-  --ink: #efe0c1;
-  --muted: #c0aa87;
-  --line: #d5bd8a;
-  --line-soft: #71564a;
-  --accent: #b95f48;
-  --accent-2:#b89a5c;
-  --signal: #ca7457;
-  --shadow: #120b0a;
-  --selection: #644137;
-  --texture-opacity: .18;
-}
-[data-theme="lowpoly"] {
-  color-scheme: dark;
-  --page: #1f2340;
-  --page-grid: rgba(193,201,255,.05);
-  --surface: #2d3154;
-  --surface-2:#373b64;
-  --ink: #f0edda;
-  --muted: #b4b5cd;
-  --line: #ddd9bd;
-  --line-soft: #646994;
-  --accent: #d66d68;
-  --accent-2:#75a9a1;
-  --signal: #ed8a78;
-  --shadow: #101225;
-  --selection: #555a8d;
-  --texture-opacity: .12;
+  --page: #080912;
+  --page-grid: transparent;
+  --surface: #111522;
+  --surface-2: #18243a;
+  --ink: #effdff;
+  --muted: #a8cbd2;
+  --outline-tone: #62ddea;
+  --line: #62ddea;
+  --line-soft: #2e7480;
+  --accent: #62ddea;
+  --accent-2: #23717f;
+  --signal: #75edf5;
+  --shadow: #02040b;
+  --selection: #245d68;
+  --texture-opacity: 0;
 }
 /* ------------------------------------------------------------
    Temel sayfa ayarları ve erişilebilirlik yardımcıları
@@ -1158,84 +1109,6 @@ blockquote {
    yalnızca sitenin dış görünüşünü ve ortak yan kolonlarını değiştirir.
    ------------------------------------------------------------ */
 
-:root,[data-theme="paper"] {
-  color-scheme: dark;
-  --page: #000;
-  --page-grid: transparent;
-  --surface: #000;
-  --surface-2: #111;
-  --ink: #f5f5f5;
-  --muted: #c0c0c0;
-  --line: #f5f5f5;
-  --line-soft: #777;
-  --accent: #fff;
-  --accent-2: #444;
-  --signal: #fff;
-  --shadow: #000;
-  --selection: #fff;
-  --texture-opacity: 0;
-}
-[data-theme="garage"] {
-  color-scheme: dark;
-  --page: #08090a;
-  --surface: #08090a;
-  --surface-2: #151719;
-  --ink: #f0eee8;
-  --muted: #b8b7b0;
-  --line: #f0eee8;
-  --line-soft: #777773;
-  --accent: #f0eee8;
-  --accent-2: #4c4d4b;
-  --signal: #fff;
-  --shadow: #000;
-  --selection: #f0eee8;
-}
-[data-theme="citypop"] {
-  color-scheme: dark;
-  --page: #07090a;
-  --surface: #07090a;
-  --surface-2: #101719;
-  --ink: #f4fbfa;
-  --muted: #bdd0d0;
-  --line: #f4fbfa;
-  --line-soft: #708384;
-  --accent: #f4fbfa;
-  --accent-2: #38636a;
-  --signal: #fff;
-  --shadow: #000;
-  --selection: #c1dfdd;
-}
-[data-theme="lounge"] {
-  color-scheme: dark;
-  --page: #0c0707;
-  --surface: #0c0707;
-  --surface-2: #1a0e0d;
-  --ink: #f6ead3;
-  --muted: #cbbda6;
-  --line: #f6ead3;
-  --line-soft: #806b58;
-  --accent: #f6ead3;
-  --accent-2: #57322d;
-  --signal: #fff;
-  --shadow: #000;
-  --selection: #6a443c;
-}
-[data-theme="lowpoly"] {
-  color-scheme: dark;
-  --page: #080912;
-  --surface: #080912;
-  --surface-2: #15172a;
-  --ink: #f1efff;
-  --muted: #c1c2dc;
-  --line: #f1efff;
-  --line-soft: #73789a;
-  --accent: #f1efff;
-  --accent-2: #42486e;
-  --signal: #fff;
-  --shadow: #000;
-  --selection: #555a8d;
-}
-
 html {
   background: var(--page);
   scrollbar-width: thin;
@@ -1836,8 +1709,8 @@ h2,
 }
 
 :root,[data-theme] {
-  --line: color-mix(in srgb,var(--ink) 67%,transparent);
-  --line-soft: color-mix(in srgb,var(--ink) 38%,transparent);
+  --line: color-mix(in srgb,var(--outline-tone) 67%,transparent);
+  --line-soft: color-mix(in srgb,var(--outline-tone) 38%,transparent);
 }
 
 .site-header,
@@ -1880,9 +1753,61 @@ h2,
 .side-block,
 .widget,
 .panel {
-  outline-color: color-mix(in srgb,var(--ink) 22%,transparent);
+  outline-color: color-mix(in srgb,var(--outline-tone) 22%,transparent);
   outline-width: var(--outline-weight);
   outline-offset: var(--outline-gap);
+}
+
+/* Referans sitenin koyu kart yapısını cyan tonlarıyla yeniden yorumlar. */
+[data-theme="cyan"] .site-sidebar,
+[data-theme="cyan"] .side-block,
+[data-theme="cyan"] .widget,
+[data-theme="cyan"] .panel {
+  background: var(--surface);
+}
+
+[data-theme="cyan"] .sidebar-nav a:hover,
+[data-theme="cyan"] .sidebar-nav a[aria-current="page"],
+[data-theme="cyan"] .player-button:hover:not(:disabled),
+[data-theme="cyan"] .timer-controls button:hover,
+[data-theme="cyan"] .site-header .utility-link:hover {
+  background: var(--accent);
+  color: #041014;
+}
+
+[data-theme="cyan"] .tag {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #041014;
+}
+
+[data-theme="cyan"] .eyebrow,
+[data-theme="cyan"] .data-label,
+[data-theme="cyan"] .track-kicker,
+[data-theme="cyan"] .room-code,
+[data-theme="cyan"] .sidebar-label {
+  color: var(--accent)!important;
+}
+
+[data-theme="cyan"] .signal,
+[data-theme="cyan"] .signal-live,
+[data-theme="cyan"] .game-viewport .cursor-car {
+  background: var(--accent);
+}
+
+[data-theme="cyan"] .game-viewport {
+  background: var(--surface-2);
+}
+
+[data-theme="cyan"] .widget-note {
+  background: var(--accent);
+  color: #041014;
+}
+
+[data-theme="cyan"] .widget-note .eyebrow,
+[data-theme="cyan"] .widget-note p,
+[data-theme="cyan"] .widget-note blockquote {
+  color: #041014!important;
 }
 
 .music-bar {
