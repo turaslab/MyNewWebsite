@@ -20,8 +20,8 @@
 
     <!-- Ortak site dosyaları -->
     <link rel="icon" href="../media/images/general/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/main.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css?v=hal-outline-1">
+    <script src="../js/main.js?v=hal-outline-1" defer></script>
   </head>
 
   <body>
@@ -57,6 +57,35 @@
         <a class="utility-link" href="../rss.xml">RSS ↗</a>
       </div>
     </header>
+
+    <aside class="site-sidebar site-sidebar-left" aria-label="Site navigasyonu">
+      <div class="sidebar-profile">
+        <a class="profile-mark" href="index.html" aria-label="Tura's Lab ana sayfa">TL</a>
+        <div>
+          <strong>hey, I'm Tura</strong>
+          <p>internetteki kişisel köşemi çalıştıran kişi.</p>
+        </div>
+      </div>
+      <span class="sidebar-label">navigation</span>
+      <nav class="sidebar-nav">
+        <a href="index.html">LAB</a>
+        <a href="blog.html">BLOG</a>
+        <a href="games.html">OYUNLAR</a>
+        <a href="music.html">MÜZİK</a>
+        <a href="projects.html">PROJELER</a>
+        <a href="about.html">HAKKINDA</a>
+      </nav>
+      <span class="sidebar-label">offsite</span>
+      <nav class="sidebar-nav sidebar-nav-small">
+        <a href="music.html#radio">LAB RADIO</a>
+        <a href="../rss.xml">RSS</a>
+        <a href="https://github.com/turaslab" rel="me noopener noreferrer">GITHUB</a>
+      </nav>
+      <div class="sidebar-clock" aria-label="Saat ve tarih">
+        <div><b>LOCAL TIME:</b> <time data-site-clock>--:--</time></div>
+        <div><b>DATE:</b> <time data-site-date>--.--.----</time></div>
+      </div>
+    </aside>
 
     <main id="main" class="room-page">
       <!-- Sayfa yolu -->
@@ -130,6 +159,28 @@
         <a href="about.html">Hakkında →</a>
       </nav>
     </main>
+
+    <aside class="site-sidebar site-sidebar-right" aria-label="Lab durum paneli">
+      <section class="side-block">
+        <span class="sidebar-label">now</span>
+        <p><strong>Oyun rafı.</strong><br>Bitirilenler, yarım kalanlar ve akılda kalanlar.</p>
+        <a href="index.html">lab'e dön →</a>
+      </section>
+      <section class="side-block">
+        <span class="sidebar-label">outline</span>
+        <ol class="side-outline-list">
+          <li><a href="blog.html">01 / yazı odası</a></li>
+          <li><a href="games.html">02 / oyun rafı</a></li>
+          <li><a href="music.html">03 / dinleme odası</a></li>
+          <li><a href="projects.html">04 / çalışma tezgâhı</a></li>
+          <li><a href="about.html">05 / kimlik</a></li>
+        </ol>
+      </section>
+      <section class="side-block side-updates">
+        <span class="sidebar-label">memory card</span>
+        <p>Bu oda skor tablosu değil; oyunların bıraktığı izlerin rafı.</p>
+      </section>
+    </aside>
 
     <!-- Alt bilgi -->
     <footer class="site-footer frame">

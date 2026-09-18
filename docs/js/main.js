@@ -97,6 +97,46 @@ function setupYear() {
   });
 }
 
+// HAL tarzı yan kolonlarda saat, tarih ve aktif oda göstergesi.
+function setupSidebar() {
+  const updateClock = () => {
+    const now = new Date();
+    const time = new Intl.DateTimeFormat('tr-TR', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).format(now);
+    const date = new Intl.DateTimeFormat('tr-TR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    }).format(now);
+
+    document.querySelectorAll('[data-site-clock]').forEach((node) => {
+      node.textContent = time;
+    });
+    document.querySelectorAll('[data-site-date]').forEach((node) => {
+      node.textContent = date;
+    });
+  };
+
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.sidebar-nav a[href]').forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('#')) {
+      return;
+    }
+
+    const page = href.split('/').pop().split('#')[0] || 'index.html';
+    if (page === currentPage) {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+
+  updateClock();
+  window.setInterval(updateClock, 60000);
+}
+
 // ------------------------------------------------------------
 // Pomodoro sayacı
 // ------------------------------------------------------------
@@ -790,6 +830,7 @@ async function setupHomeContent() {
 
 setupTheme();
 setupYear();
+setupSidebar();
 setupTimer();
 setupMusicPlayer();
 setupLibrary();

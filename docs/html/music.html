@@ -17,8 +17,8 @@
 
     <!-- Ortak site dosyaları -->
     <link rel="icon" href="../media/images/general/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/main.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css?v=hal-outline-1">
+    <script src="../js/main.js?v=hal-outline-1" defer></script>
     <script src="../js/radio-player.js" defer></script>
     <script src="../js/radio.js" defer></script>
   </head>
@@ -56,6 +56,35 @@
         <a class="utility-link" href="../rss.xml">RSS ↗</a>
       </div>
     </header>
+
+    <aside class="site-sidebar site-sidebar-left" aria-label="Site navigasyonu">
+      <div class="sidebar-profile">
+        <a class="profile-mark" href="index.html" aria-label="Tura's Lab ana sayfa">TL</a>
+        <div>
+          <strong>hey, I'm Tura</strong>
+          <p>internetteki kişisel köşemi çalıştıran kişi.</p>
+        </div>
+      </div>
+      <span class="sidebar-label">navigation</span>
+      <nav class="sidebar-nav">
+        <a href="index.html">LAB</a>
+        <a href="blog.html">BLOG</a>
+        <a href="games.html">OYUNLAR</a>
+        <a href="music.html">MÜZİK</a>
+        <a href="projects.html">PROJELER</a>
+        <a href="about.html">HAKKINDA</a>
+      </nav>
+      <span class="sidebar-label">offsite</span>
+      <nav class="sidebar-nav sidebar-nav-small">
+        <a href="music.html#radio">LAB RADIO</a>
+        <a href="../rss.xml">RSS</a>
+        <a href="https://github.com/turaslab" rel="me noopener noreferrer">GITHUB</a>
+      </nav>
+      <div class="sidebar-clock" aria-label="Saat ve tarih">
+        <div><b>LOCAL TIME:</b> <time data-site-clock>--:--</time></div>
+        <div><b>DATE:</b> <time data-site-date>--.--.----</time></div>
+      </div>
+    </aside>
 
     <main id="main" class="room-page">
       <!-- Sayfa yolu -->
@@ -218,6 +247,26 @@
         <a href="about.html">Hakkında →</a>
       </nav>
     </main>
+
+    <aside class="site-sidebar site-sidebar-right" aria-label="Lab durum paneli">
+      <section class="side-block">
+        <span class="sidebar-label">now</span>
+        <p><strong>Dinleme odası.</strong><br>Lab Radio ve yerel kasetçalar aynı yerde.</p>
+        <a href="#radio">radyo durumuna bak →</a>
+      </section>
+      <section class="side-block">
+        <span class="sidebar-label">outline</span>
+        <ol class="side-outline-list">
+          <li><a href="#radio">01 / lab radio</a></li>
+          <li><a href="#cassette-title">02 / kasetçalar</a></li>
+          <li><a href="#music-archive">03 / albüm rafı</a></li>
+        </ol>
+      </section>
+      <section class="side-block side-updates">
+        <span class="sidebar-label">signal</span>
+        <p>Radyo bilgisi sunucudan okunur. Ses, kullanıcı başlatınca YouTube üzerinden açılır.</p>
+      </section>
+    </aside>
 
     <!-- Alt bilgi -->
     <footer class="site-footer frame">
