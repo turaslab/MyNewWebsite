@@ -1,5 +1,5 @@
 ---
-# Bu bölüm oyun listesinde ve kayıt başlığında kullanılır.
+# Başlık ve açıklama, oyun listesinde de görünür.
 title: Oyunun adı
 year: 2026
 platform: PC
@@ -15,9 +15,9 @@ image_alt: Oyun görselinin kısa açıklaması.
 draft: false
 ---
 
-# Bende bıraktığı
+# Kısa not
 
-Oyuna dair uzun notunu buraya yaz.
+Oyunla ilgili notunu buraya yaz. Neyi sevdin, aklında ne kaldı?
 
 ## Hatırladığım şeyler
 

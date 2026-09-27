@@ -8,12 +8,12 @@
     <meta name="robots" content="noindex, nofollow">
     <meta
       name="description"
-      content="Tura'nın oyun kütüphanesi ve kişisel oyun notları."
+      content="Oynadığım oyunlar ve aklımda kalanlar."
     >
     <meta property="og:title" content="Oyun Kütüphanesi — Tura's Lab">
     <meta
       property="og:description"
-      content="Bitirilenler, yarım kalanlar ve akılda kalanlar."
+      content="Bitirdiklerim, yarım bıraktıklarım, aklımda kalanlar."
     >
     <meta property="og:image" content="https://tugratunc.me/media/images/general/og.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
     <link rel="icon" href="../media/images/general/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="../media/fonts/RobotoSlab-Variable.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="../css/style.css?v=black-rose-2">
-    <script src="../js/main.js?v=black-rose-1" defer></script>
+    <script src="../js/main.js?v=copy-1" defer></script>
   </head>
 
   <body>
@@ -39,11 +39,11 @@
         </span>
         <span>
           <strong>Tura's Lab</strong>
-          <small>room / games</small>
+          <small>oyunlar / 02</small>
         </span>
       </a>
 
-      <p class="identity">Bitirilenler, yarım kalanlar ve akılda kalanlar.</p>
+      <p class="identity">Bitirdiklerim, yarım bıraktıklarım, aklımda kalanlar.</p>
 
       <div class="header-tools">
         <label class="theme-control" for="theme-select">
@@ -57,32 +57,32 @@
       </div>
     </header>
 
-    <aside class="site-sidebar site-sidebar-left" aria-label="Site navigasyonu">
+    <aside class="site-sidebar site-sidebar-left" aria-label="Site bölümleri">
       <div class="sidebar-profile">
         <a class="profile-mark" href="index.html" aria-label="Tura's Lab ana sayfa">TL</a>
         <div>
-          <strong>hey, I'm Tura</strong>
-          <p>internetteki kişisel köşemi çalıştıran kişi.</p>
+          <strong>Selam, ben Tura.</strong>
+          <p>Burası benim internetteki köşem.</p>
         </div>
       </div>
-      <span class="sidebar-label">navigation</span>
+      <span class="sidebar-label">bölümler</span>
       <nav class="sidebar-nav">
         <a href="index.html">LAB</a>
         <a href="blog.html">BLOG</a>
         <a href="games.html">OYUNLAR</a>
         <a href="music.html">MÜZİK</a>
         <a href="projects.html">PROJELER</a>
-        <a href="about.html">HAKKINDA</a>
+        <a href="about.html">HAKKIMDA</a>
       </nav>
-      <span class="sidebar-label">offsite</span>
+      <span class="sidebar-label">bağlantılar</span>
       <nav class="sidebar-nav sidebar-nav-small">
         <a href="music.html#radio">LAB RADIO</a>
         <a href="../rss.xml">RSS</a>
         <a href="https://github.com/turaslab" rel="me noopener noreferrer">GITHUB</a>
       </nav>
       <div class="sidebar-clock" aria-label="Saat ve tarih">
-        <div><b>LOCAL TIME:</b> <time data-site-clock>--:--</time></div>
-        <div><b>DATE:</b> <time data-site-date>--.--.----</time></div>
+        <div><b>SAAT:</b> <time data-site-clock>--:--</time></div>
+        <div><b>TARİH:</b> <time data-site-date>--.--.----</time></div>
       </div>
     </aside>
 
@@ -97,12 +97,11 @@
       <!-- Oda başlığı -->
       <header class="room-header">
         <div>
-          <span class="room-code">Room 02 / memory card</span>
+          <span class="room-code">02 / oyunlar</span>
           <h1>Oyunlar</h1>
         </div>
         <p>
-          Puan tablosundan çok kişisel hafıza: nerede oynandı, ne bıraktı ve
-          neden hâlâ hatırlanıyor?
+          Oynadığım oyunları buraya topluyorum. Nerede oynadım, neyi sevdim, aklımda ne kaldı?
         </p>
       </header>
 
@@ -123,17 +122,16 @@
         <aside class="panel shelf-note">
           <span class="shelf-number">02</span>
           <div>
-            <h2>Bir skor sitesi değil.</h2>
+            <h2>Oyunlardan kalanlar.</h2>
             <p>
-              Yeni kayıt için <code>games/game_template.md</code> dosyasını
-              kopyala ve adını <code>games/index.json</code> listesine ekle.
+              Bazen bir sahne, bazen bir müzik, bazen de oynarken yaşadığım bir şey. Notlar burada duracak.
             </p>
           </div>
         </aside>
 
         <!-- Seçilen Markdown oyun kaydı burada açılır. -->
         <article class="panel full markdown-reader" data-library-reader hidden>
-          <a class="reader-back" href="games.html">Bütün oyunlar</a>
+          <a class="reader-back" href="games.html">Tüm oyunlar</a>
           <header class="reader-header">
             <span class="room-code" data-reader-meta></span>
             <h2 data-reader-title></h2>
@@ -151,41 +149,41 @@
       </div>
 
       <!-- Diğer odalar -->
-      <nav class="room-nav" aria-label="Diğer odalar">
+      <nav class="room-nav" aria-label="Diğer bölümler">
         <a href="blog.html">Blog</a>
         <a href="music.html">Müzik</a>
         <a href="projects.html">Projeler</a>
-        <a href="about.html">Hakkında</a>
+        <a href="about.html">Hakkımda</a>
       </nav>
     </main>
 
     <aside class="site-sidebar site-sidebar-right" aria-label="Lab durum paneli">
       <section class="side-block">
-        <span class="sidebar-label">now</span>
-        <p><strong>Oyun rafı.</strong><br>Bitirilenler, yarım kalanlar ve akılda kalanlar.</p>
-        <a href="index.html">lab'e dön</a>
+        <span class="sidebar-label">şimdilik</span>
+        <p><strong>Oyunlar.</strong><br>Bitirdiklerim, yarım bıraktıklarım, aklımda kalanlar.</p>
+        <a href="index.html">ana sayfaya dön</a>
       </section>
       <section class="side-block">
-        <span class="sidebar-label">outline</span>
+        <span class="sidebar-label">bu sitede</span>
         <ol class="side-outline-list">
-          <li><a href="blog.html">01 / yazı odası</a></li>
-          <li><a href="games.html">02 / oyun rafı</a></li>
-          <li><a href="music.html">03 / dinleme odası</a></li>
-          <li><a href="projects.html">04 / çalışma tezgâhı</a></li>
-          <li><a href="about.html">05 / kimlik</a></li>
+          <li><a href="blog.html">01 / yazılar</a></li>
+          <li><a href="games.html">02 / oyunlar</a></li>
+          <li><a href="music.html">03 / müzik</a></li>
+          <li><a href="projects.html">04 / projeler</a></li>
+          <li><a href="about.html">05 / hakkımda</a></li>
         </ol>
       </section>
       <section class="side-block side-updates">
-        <span class="sidebar-label">memory card</span>
-        <p>Bu oda skor tablosu değil; oyunların bıraktığı izlerin rafı.</p>
+        <span class="sidebar-label">oyun notları</span>
+        <p>Bir oyundan aklımda ne kaldıysa onu yazacağım.</p>
       </section>
     </aside>
 
     <!-- Alt bilgi -->
     <footer class="site-footer frame">
       <p>© <span data-current-year>2026</span> Tura's Lab</p>
-      <p>Room 02 / Games</p>
-      <a href="index.html">Lab'e dön</a>
+      <p>02 / oyunlar</p>
+      <a href="index.html">Ana sayfaya dön</a>
     </footer>
   </body>
 </html>

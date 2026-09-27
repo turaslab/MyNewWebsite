@@ -1,21 +1,17 @@
 ---
-title: Yazının başlığı
+title: Örnek yazı
 date: 2026-09-04
-summary: Ana sayfada ve blog listesinde görünecek kısa açıklama.
-tags: günlük, oyun
+summary: Yazıların nasıl görüneceğini denemek için eklenmiş bir örnek.
+tags: örnek
 image:
 image_alt:
 draft: false
 ---
 
-# İlk bölüm
+# Şimdilik bir örnek
 
-Yazını buraya yaz. Normal paragraflar olduğu gibi görünür.
+Bu kayıt, yazıların sitede nasıl göründüğünü denemek için duruyor. Henüz kişisel bir yazı eklemedim.
 
-## Alt başlık
+## Yazı eklerken
 
-- Liste maddesi
-- Başka bir madde
-- Denemeememmeem
-
-[Bir bağlantı](https://example.com)
+Başlık, kısa açıklama ve yazının kendisi burada görünecek. İster kısa bir not, ister biraz daha uzun bir yazı olabilir.

@@ -76,7 +76,7 @@
     if (suspended) return;
 
     // Bağlantı kaybını, sunucunun bildirdiği “yayın yok” ile karıştırma.
-    render('BAĞLANTI KESİLDİ', 'Yayın bilgisine ulaşılamıyor.');
+    render('BAĞLANTI KESİLDİ', 'Radyo bilgisi gelmiyor.');
     if (!navigator.onLine) return;
     retryTimer = setTimeout(connect, retryDelay);
     retryDelay = Math.min(retryDelay * 2, 30000);
@@ -87,15 +87,15 @@
     retryTimer = null;
     if (suspended || socket) return;
     if (!navigator.onLine) {
-      render('BAĞLANTI YOK', 'İnternet bağlantısı bekleniyor.');
+      render('BAĞLANTI YOK', 'İnternet bağlantısı yok.');
       return;
     }
     if (!('WebSocket' in window)) {
-      render('BAĞLANTI YOK', 'Bu tarayıcı radyo bağlantısını desteklemiyor.');
+      render('BAĞLANTI YOK', 'Radyo bu tarayıcıda açılamıyor.');
       return;
     }
 
-    render('BAĞLANIYOR', 'Yayın bilgisi alınıyor.');
+    render('BAĞLANIYOR', 'Radyoya bağlanılıyor…');
     try {
       const current = new WebSocket(endpoint);
       socket = current;

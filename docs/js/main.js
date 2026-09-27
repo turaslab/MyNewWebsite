@@ -19,9 +19,9 @@ const COLLECTIONS = {
     page: 'blog.html',
     queryParameter: 'post',
     listClass: 'record-list',
-    emptyCode: 'LOG 000',
-    emptyTitle: 'Henüz yayımlanmış yazı yok.',
-    emptyMessage: 'İlk Markdown yazını eklediğinde burada kendiliğinden görünecek.',
+    emptyCode: 'YAZI 000',
+    emptyTitle: 'Henüz yazı yok.',
+    emptyMessage: 'İlk yazıyı eklediğimde burada görünecek.',
     sortValue: (record) => record.meta.date || '',
     listMeta: (record) => formatDate(record.meta.date),
     readerMeta: (record) => [
@@ -34,9 +34,9 @@ const COLLECTIONS = {
     page: 'games.html',
     queryParameter: 'game',
     listClass: 'game-list',
-    emptyCode: 'NO SAVES',
-    emptyTitle: 'Kütüphane henüz boş.',
-    emptyMessage: 'İlk Markdown oyun kaydını eklediğinde burada kendiliğinden görünecek.',
+    emptyCode: 'OYUN 000',
+    emptyTitle: 'Henüz oyun notu yok.',
+    emptyMessage: 'Oyun notlarını ekledikçe burası dolacak.',
     sortValue: (record) => record.meta.year || '',
     listMeta: (record) => [record.meta.platform, record.meta.status],
     readerMeta: (record) => [
@@ -50,9 +50,9 @@ const COLLECTIONS = {
     page: 'music.html',
     queryParameter: 'album',
     listClass: 'record-list',
-    emptyCode: 'SIDE A / 000',
-    emptyTitle: 'Müzik rafı henüz boş.',
-    emptyMessage: 'İlk Markdown albüm kaydını eklediğinde burada kendiliğinden görünecek.',
+    emptyCode: 'MÜZİK 000',
+    emptyTitle: 'Şimdilik albüm notu yok.',
+    emptyMessage: 'Bir şey ekledikçe burada görünecek.',
     sortValue: (record) => record.meta.year || '',
     listMeta: (record) => [record.meta.artist, record.meta.year],
     readerMeta: (record) => [
@@ -201,7 +201,7 @@ function setupTimer() {
 
     document.title = state.running
       ? `${minutes}:${seconds} — Tura's Lab`
-      : "Tura's Lab — kişisel arşivler ve dijital deneyler";
+      : "Tura's Lab — benim köşem";
   };
 
   toggle.addEventListener('click', () => {
@@ -303,7 +303,7 @@ async function setupMusicPlayer() {
       await audio.play();
       message.textContent = '';
     } catch (error) {
-      message.textContent = 'Tarayıcı oynatmayı engelledi; yeniden Oynat düğmesine bas.';
+      message.textContent = 'Ses başlamadı. Oynat düğmesine bir daha basabilir misin?';
       console.error(error);
     }
   };
@@ -394,7 +394,7 @@ async function setupMusicPlayer() {
   });
   audio.addEventListener('error', () => {
     status.textContent = 'KASETÇALAR / HATA';
-    message.textContent = 'Ses dosyası açılamadı. Çalma listesindeki yolu kontrol et.';
+    message.textContent = 'Bu parça açılamadı. Biraz sonra tekrar deneyebilirsin.';
     toggle.disabled = true;
     seek.disabled = true;
   });
@@ -417,8 +417,8 @@ async function setupMusicPlayer() {
 
     if (!tracks.length) {
       status.textContent = 'KASETÇALAR / BOŞ';
-      title.textContent = 'Çalma listesi boş.';
-      artist.textContent = 'music/playlist.json dosyasına ilk parçayı ekle.';
+      title.textContent = 'Şimdilik parça yok.';
+      artist.textContent = 'Parçalar eklenince burada görünecek.';
       message.textContent = '';
       return;
     }
@@ -433,8 +433,8 @@ async function setupMusicPlayer() {
     loadTrack(initialIndex);
   } catch (error) {
     status.textContent = 'KASETÇALAR / HATA';
-    title.textContent = 'Çalma listesi okunamadı.';
-    artist.textContent = 'Yerel sunucuyu ve playlist dosyasını kontrol et.';
+    title.textContent = 'Parçalar yüklenemedi.';
+    artist.textContent = 'Sayfayı yenileyip tekrar deneyebilirsin.';
     message.textContent = '';
     console.error(error);
   }
@@ -768,8 +768,7 @@ async function setupLibrary() {
     count.textContent = 'okunamadı';
     listContainer.innerHTML = `
       <p class="load-error">
-        İçerikler yüklenemedi. Siteyi dosyaya çift tıklayarak değil,
-        VS Code Live Server ile açtığından emin ol.
+        İçerikler yüklenemedi. Sayfayı yenileyip tekrar deneyebilirsin.
       </p>
     `;
     console.error(error);

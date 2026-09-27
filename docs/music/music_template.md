@@ -1,5 +1,5 @@
 ---
-# Bu bölüm müzik listesinde ve kayıt başlığında kullanılır.
+# Başlık ve açıklama, müzik listesinde de görünür.
 title: Albümün veya kaydın adı
 artist: Sanatçı adı
 year: 2026
@@ -16,17 +16,17 @@ image_alt: Albüm kapağının kısa açıklaması.
 draft: false
 ---
 
-# Bende bıraktığı
+# Kısa not
 
-Bu albümü, şarkıyı veya kaydı neden saklamak istediğini buraya yaz.
+Bu albümle ya da parçayla ilgili notunu buraya yaz.
 
 ## İlk karşılaşma
 
-Onu ilk nerede duyduğunu veya hangi dönemi hatırlattığını anlatabilirsin.
+İlk nerede dinledin? İstersen buraya yaz.
 
 ## Aklımda kalanlar
 
 - Bir şarkı
 - Bir söz veya ses
 - Bir dönem
-- Yeniden dinleme sebebi
+- Tekrar dinlemek istediğin bir şey

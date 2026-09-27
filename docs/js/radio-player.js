@@ -44,7 +44,7 @@
     if (!ready || !listening || !state?.live) return;
     if (performance.now() - receivedAt > 35000) {
       state = null;
-      pause('Yayın güncellemesi kesildi. Yeni bilgi gelince yeniden başlat.');
+      pause('Yayın bilgisi gelmiyor. Bağlantı geri gelince radyoyu tekrar başlatabilirsin.');
       return;
     }
     const target = position();
@@ -63,7 +63,7 @@
       if (state.state === 'paused') player.pauseVideo();
       else if (force || player.getPlayerState() === 5) player.playVideo();
     }
-    say(state.state === 'paused' ? 'DJ yayını duraklattı.' : 'Yayını takip ediyorsun.');
+    say(state.state === 'paused' ? 'DJ yayını duraklattı.' : 'Radyoyu dinliyorsun.');
   }
 
   // YouTube'a ziyaretçi başlatmadan istek yapılmaz.
@@ -108,22 +108,22 @@
             sync(true);
           },
           onAutoplayBlocked() {
-            pause('Tarayıcı oynatmayı engelledi. Radyoyu başlat veya videodaki oynat düğmesine bas.');
+            pause('Ses başlamadı. Radyoyu başlat düğmesine ya da videodaki oynat düğmesine bas.');
           },
           onError(event) {
             const messages = {
-              100: 'Video kaldırılmış veya özel.',
+              100: 'Bu video kaldırılmış ya da gizli.',
               101: 'Bu videonun sitede oynatılmasına izin verilmiyor.',
               150: 'Bu videonun sitede oynatılmasına izin verilmiyor.',
-              153: 'YouTube site kimliğini doğrulayamadı. Tarayıcının gizlilik/referrer ayarlarını kontrol et.'
+              153: 'YouTube oynatıcıyı açamadı. Tarayıcının gizlilik ayarları bunu engelliyor olabilir.'
             };
             loadedId = null;
-            pause(messages[event.data] || 'YouTube bu videoyu oynatamadı. Yeniden deneyebilir veya sonraki şarkıyı bekleyebilirsin.');
+            pause(messages[event.data] || 'YouTube bu videoyu açamadı. Tekrar deneyebilir ya da sonraki parçayı bekleyebilirsin.');
           },
           onStateChange(event) {
             // Gömülü oynatıcının kendi pause/play kontrolü de yerel kalır.
             if (event.data === 2 && listening && state?.state === 'playing') {
-              pause('Dinleme sende duraklatıldı. Başlatınca güncel yayına dönersin.');
+              pause('Dinlemeyi duraklattın. Tekrar başlatınca güncel yayına dönersin.');
             }
             if (event.data === 1) {
               if (!state?.live) { player.pauseVideo(); return; }
@@ -135,12 +135,12 @@
         }
       });
     } catch {
-      pause('YouTube yüklenemedi. Bağlantını veya içerik engelleyicini kontrol edip tekrar dene.');
+      pause('YouTube yüklenemedi. Bağlantını ve içerik engelleyicini kontrol edip tekrar deneyebilirsin.');
     }
   });
 
-  stop.addEventListener('click', () => pause('Dinleme durduruldu. Yayın diğer dinleyicilerde devam eder.'));
-  cassette?.addEventListener('play', () => pause('Kasetçalar açık; radyo dinlemesi durduruldu.'));
+  stop.addEventListener('click', () => pause('Dinlemeyi durdurdun. Yayın diğer dinleyicilerde devam ediyor.'));
+  cassette?.addEventListener('play', () => pause('Kasetçalar açıldı. Radyo dinlemesi durdu.'));
   window.addEventListener('lab-radio-state', event => {
     const previous = state;
     state = event.detail;
@@ -148,7 +148,7 @@
     controls();
     if (!state?.live) { pause(state ? 'Şu an yayın yok.' : 'Radyo bağlantısı kesildi.'); return; }
     if (listening) sync(previous?.state !== state.state);
-    else say('Yayına katılmak için Radyoyu başlat.');
+    else say('Dinlemek için Radyoyu başlat düğmesine bas.');
   });
   window.addEventListener('pagehide', () => pause('Dinleme durduruldu.'));
   document.addEventListener('visibilitychange', () => { if (!document.hidden) sync(); });

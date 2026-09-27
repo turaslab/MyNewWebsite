@@ -1,13 +1,13 @@
 ---
-# Bu bölüm blog listesinde ve yazı başlığında kullanılır.
+# Başlık ve açıklama, yazı listesinde de görünür.
 title: Yazının başlığı
 date: 2026-09-04
-summary: Ana sayfada ve blog listesinde görünecek kısa açıklama.
+summary: Yazının ne hakkında olduğunu anlatan kısa bir açıklama.
 tags: günlük, oyun
 
 # Kapak kullanmayacaksan image ve image_alt alanlarını boş bırakabilirsin.
 image: ../media/images/blog/ornek-fotograf.jpg
-image_alt: Fotoğrafı göremeyenler için kısa açıklama.
+image_alt: Fotoğrafta ne olduğunu anlatan kısa bir açıklama.
 
 # true yaparsan yazı dosyada kalır fakat sitede görünmez.
 draft: false
@@ -15,7 +15,7 @@ draft: false
 
 # İlk bölüm
 
-Yazını buraya yaz. Normal paragraflar olduğu gibi görünür.
+Yazını buraya yaz. Kısa bir not da olabilir, daha uzun bir yazı da.
 
 ## Alt başlık
 
