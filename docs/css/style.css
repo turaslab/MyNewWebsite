@@ -3,22 +3,33 @@
    Yeni bir tema eklemek için aynı değişkenleri yeni seçicide tanımla.
    ------------------------------------------------------------ */
 
-:root,[data-theme="mono"] {
+:root,[data-theme="black"] {
   color-scheme: dark;
-  --page: #000;
+  --black-50: #f8f3f4;
+  --black-100: #ece1e3;
+  --black-200: #dcc5c9;
+  --black-300: #c29ea4;
+  --black-400: #a26e76;
+  --black-500: #87535a;
+  --black-600: #73474b;
+  --black-700: #5f3f41;
+  --black-800: #51393a;
+  --black-900: #463333;
+  --black-950: #030202;
+  --page: var(--black-950);
   --page-grid: transparent;
-  --surface: #000;
-  --surface-2: #111;
-  --ink: #f5f5f5;
-  --muted: #c0c0c0;
-  --outline-tone: #f5f5f5;
-  --line: #f5f5f5;
-  --line-soft: #777;
-  --accent: #fff;
-  --accent-2: #444;
-  --signal: #fff;
-  --shadow: #000;
-  --selection: #fff;
+  --surface: var(--black-900);
+  --surface-2: var(--black-800);
+  --ink: var(--black-50);
+  --muted: var(--black-200);
+  --outline-tone: var(--black-400);
+  --line: var(--black-400);
+  --line-soft: var(--black-700);
+  --accent: var(--black-200);
+  --accent-2: var(--black-600);
+  --signal: var(--black-300);
+  --shadow: var(--black-950);
+  --selection: var(--black-600);
   --texture-opacity: 0;
 }
 [data-theme="cyan"] {
@@ -1230,7 +1241,7 @@ body > .site-header {
   padding: 12px;
   overflow: hidden;
   border: 1px solid var(--line);
-  outline: 1px solid #242424;
+  outline: 1px solid var(--line-soft);
   outline-offset: 2px;
   background: var(--page);
 }
@@ -1333,7 +1344,7 @@ body > .site-header {
   margin-bottom: 12px;
   padding: 10px;
   border: 1px solid var(--line);
-  outline: 1px solid #242424;
+  outline: 1px solid var(--line-soft);
   outline-offset: 2px;
 }
 
@@ -1399,7 +1410,7 @@ body > .lab-grid {
 .widget,
 .panel {
   border: 1px solid var(--line);
-  outline: 1px solid #242424;
+  outline: 1px solid var(--line-soft);
   outline-offset: 2px;
   border-radius: 0;
   background: var(--page);
@@ -1486,7 +1497,7 @@ h2,
 
 .game-viewport {
   border-color: var(--line);
-  background: #050505;
+  background: var(--page);
 }
 
 .game-viewport .horizon,
@@ -1495,12 +1506,12 @@ h2,
 }
 
 .game-viewport .road {
-  background: #1a1a1a;
+  background: var(--surface-2);
 }
 
 .game-viewport .cursor-car {
   background: var(--ink);
-  box-shadow: -7px 5px 0 -3px #000,7px 5px 0 -3px #000;
+  box-shadow: -7px 5px 0 -3px var(--page),7px 5px 0 -3px var(--page);
 }
 
 .game-display {
@@ -1758,56 +1769,56 @@ h2,
   outline-offset: var(--outline-gap);
 }
 
-/* Referans sitenin koyu kart yapısını cyan tonlarıyla yeniden yorumlar. */
-[data-theme="cyan"] .site-sidebar,
-[data-theme="cyan"] .side-block,
-[data-theme="cyan"] .widget,
-[data-theme="cyan"] .panel {
+/* Renkli temalarda kart, vurgu ve etiket yüzeyleri. */
+:is([data-theme="black"],[data-theme="cyan"]) .site-sidebar,
+:is([data-theme="black"],[data-theme="cyan"]) .side-block,
+:is([data-theme="black"],[data-theme="cyan"]) .widget,
+:is([data-theme="black"],[data-theme="cyan"]) .panel {
   background: var(--surface);
 }
 
-[data-theme="cyan"] .sidebar-nav a:hover,
-[data-theme="cyan"] .sidebar-nav a[aria-current="page"],
-[data-theme="cyan"] .player-button:hover:not(:disabled),
-[data-theme="cyan"] .timer-controls button:hover,
-[data-theme="cyan"] .site-header .utility-link:hover {
+:is([data-theme="black"],[data-theme="cyan"]) .sidebar-nav a:hover,
+:is([data-theme="black"],[data-theme="cyan"]) .sidebar-nav a[aria-current="page"],
+:is([data-theme="black"],[data-theme="cyan"]) .player-button:hover:not(:disabled),
+:is([data-theme="black"],[data-theme="cyan"]) .timer-controls button:hover,
+:is([data-theme="black"],[data-theme="cyan"]) .site-header .utility-link:hover {
   background: var(--accent);
-  color: #041014;
+  color: var(--page);
 }
 
-[data-theme="cyan"] .tag {
+:is([data-theme="black"],[data-theme="cyan"]) .tag {
   border-color: var(--accent);
   background: var(--accent);
-  color: #041014;
+  color: var(--page);
 }
 
-[data-theme="cyan"] .eyebrow,
-[data-theme="cyan"] .data-label,
-[data-theme="cyan"] .track-kicker,
-[data-theme="cyan"] .room-code,
-[data-theme="cyan"] .sidebar-label {
+:is([data-theme="black"],[data-theme="cyan"]) .eyebrow,
+:is([data-theme="black"],[data-theme="cyan"]) .data-label,
+:is([data-theme="black"],[data-theme="cyan"]) .track-kicker,
+:is([data-theme="black"],[data-theme="cyan"]) .room-code,
+:is([data-theme="black"],[data-theme="cyan"]) .sidebar-label {
   color: var(--accent)!important;
 }
 
-[data-theme="cyan"] .signal,
-[data-theme="cyan"] .signal-live,
-[data-theme="cyan"] .game-viewport .cursor-car {
+:is([data-theme="black"],[data-theme="cyan"]) .signal,
+:is([data-theme="black"],[data-theme="cyan"]) .signal-live,
+:is([data-theme="black"],[data-theme="cyan"]) .game-viewport .cursor-car {
   background: var(--accent);
 }
 
-[data-theme="cyan"] .game-viewport {
+:is([data-theme="black"],[data-theme="cyan"]) .game-viewport {
   background: var(--surface-2);
 }
 
-[data-theme="cyan"] .widget-note {
+:is([data-theme="black"],[data-theme="cyan"]) .widget-note {
   background: var(--accent);
-  color: #041014;
+  color: var(--page);
 }
 
-[data-theme="cyan"] .widget-note .eyebrow,
-[data-theme="cyan"] .widget-note p,
-[data-theme="cyan"] .widget-note blockquote {
-  color: #041014!important;
+:is([data-theme="black"],[data-theme="cyan"]) .widget-note .eyebrow,
+:is([data-theme="black"],[data-theme="cyan"]) .widget-note p,
+:is([data-theme="black"],[data-theme="cyan"]) .widget-note blockquote {
+  color: var(--page)!important;
 }
 
 .music-bar {
@@ -1824,4 +1835,24 @@ h2,
   .music-bar {
     grid-template-columns: repeat(3,max-content) minmax(72px,1fr);
   }
+}
+
+/* Black Rose: aynı ince çerçeve düzeninde sıcak, katmanlı yüzeyler. */
+[data-theme="black"] .side-block {
+  background: var(--surface-2);
+}
+[data-theme="black"] .widget-note {
+  background: var(--black-200);
+}
+[data-theme="black"] .site-header .brand-mark i,
+[data-theme="black"] .profile-mark {
+  color: var(--accent);
+}
+[data-theme="black"] .site-header .brand-mark i {
+  background: var(--accent);
+}
+[data-theme="black"] .widget-topline > a,
+[data-theme="black"] .room-nav a,
+[data-theme="black"] .breadcrumbs {
+  color: var(--muted);
 }

@@ -3,7 +3,7 @@
 // ------------------------------------------------------------
 
 const THEMES = new Set([
-  'mono',
+  'black',
   'cyan',
 ]);
 
@@ -69,11 +69,14 @@ const COLLECTIONS = {
 // ------------------------------------------------------------
 
 function applyTheme(theme) {
-  const migratedTheme = theme === 'lowpoly' ? 'cyan' : theme;
-  const safeTheme = THEMES.has(migratedTheme) ? migratedTheme : 'mono';
+  const migratedTheme = theme === 'mono' ? 'black' : theme === 'lowpoly' ? 'cyan' : theme;
+  const safeTheme = THEMES.has(migratedTheme) ? migratedTheme : 'black';
 
   document.documentElement.dataset.theme = safeTheme;
   localStorage.setItem(THEME_KEY, safeTheme);
+  document.querySelector('meta[name="theme-color"]')?.setAttribute(
+    'content', safeTheme === 'black' ? '#030202' : '#080912',
+  );
 
   const select = document.querySelector('#theme-select');
   if (select) {
@@ -82,7 +85,7 @@ function applyTheme(theme) {
 }
 
 function setupTheme() {
-  applyTheme(localStorage.getItem(THEME_KEY) || 'mono');
+  applyTheme(localStorage.getItem(THEME_KEY) || 'black');
 
   document.querySelector('#theme-select')?.addEventListener('change', (event) => {
     applyTheme(event.target.value);
