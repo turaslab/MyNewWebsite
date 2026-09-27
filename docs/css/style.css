@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../media/fonts/RobotoSlab-Variable.ttf") format("truetype");
+}
+
 /* ------------------------------------------------------------
    Tema renkleri
    Yeni bir tema eklemek için aynı değişkenleri yeni seçicide tanımla.
@@ -18,11 +26,11 @@
   --black-950: #030202;
   --page: var(--black-950);
   --page-grid: transparent;
-  --surface: var(--black-900);
-  --surface-2: var(--black-800);
-  --ink: var(--black-50);
+  --surface: var(--black-950);
+  --surface-2: #111;
+  --ink: var(--black-200);
   --muted: var(--black-200);
-  --outline-tone: var(--black-400);
+  --outline-tone: #777;
   --line: var(--black-400);
   --line-soft: var(--black-700);
   --accent: var(--black-200);
@@ -67,7 +75,7 @@ body {
   background-image: linear-gradient(var(--page-grid) 1px,transparent 1px),linear-gradient(90deg,var(--page-grid) 1px,transparent 1px);
   background-size: 24px 24px;
   color: var(--ink);
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: "Roboto Slab",Georgia,serif;
   line-height: 1.5;
   transition: background-color .2s ease,color .2s ease;
 }
@@ -137,14 +145,14 @@ button,select {
 }
 .brand strong {
   display: block;
-  font-family: Georgia,"Times New Roman",serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(1.55rem,3vw,2.15rem);
   font-weight: 400;
   letter-spacing: -.035em;
   line-height: .9;
 }
 .brand small,.eyebrow,.data-label,.track-kicker,.status-line,.project-meta,.theme-control,.utility-link {
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   letter-spacing: .04em;
 }
 .brand small {
@@ -271,7 +279,7 @@ button,select {
   border-bottom: 1px solid var(--line-soft);
 }
 .widget-topline>a {
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .68rem;
 }
 .eyebrow,.data-label {
@@ -288,7 +296,7 @@ h1,h2 {
 h1 {
   max-width: 760px;
   margin-bottom: 1rem;
-  font-family: Georgia,"Times New Roman",serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(2.4rem,5vw,5.25rem);
   font-weight: 400;
   letter-spacing: -.05em;
@@ -296,7 +304,7 @@ h1 {
 }
 h2 {
   margin-bottom: .65rem;
-  font-family: Georgia,"Times New Roman",serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(1.55rem,2.6vw,2.35rem);
   font-weight: 400;
   line-height: 1;
@@ -328,7 +336,7 @@ h2 {
   padding: .75rem 0 .45rem;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .8rem;
 }
 .index-stamp {
@@ -336,7 +344,7 @@ h2 {
   right: 1.2rem;
   bottom: 1.1rem;
   color: color-mix(in srgb,var(--ink) 12%,transparent);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(3rem,8vw,7rem);
   font-weight: 500;
   letter-spacing: -.12em;
@@ -434,7 +442,7 @@ h2 {
   border-radius: 0;
   background: var(--surface-2);
   color: var(--ink);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   cursor: pointer;
 }
 .player-button {
@@ -497,7 +505,7 @@ h2 {
 }
 .track-time {
   min-width: 6.7rem;
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .63rem;
   text-align: right;
   white-space: nowrap;
@@ -506,7 +514,7 @@ h2 {
   min-height: 1.2em;
   margin: .55rem 0 0;
   color: var(--muted)!important;
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .65rem!important;
 }
 .project-meta {
@@ -530,7 +538,7 @@ h2 {
 }
 .timer {
   margin: .8rem 0 1.2rem;
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(2.6rem,5vw,4.5rem);
   letter-spacing: -.08em;
 }
@@ -573,7 +581,7 @@ h2 {
 }
 .room-list span,.room-list em {
   color: var(--muted);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .62rem;
   font-style: normal;
   font-weight: 400;
@@ -594,7 +602,7 @@ h2 {
 }
 blockquote {
   margin: .6rem 0 0;
-  font-family: Georgia,"Times New Roman",serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(2rem,4vw,4rem);
   font-style: italic;
   line-height: .95;
@@ -607,7 +615,7 @@ blockquote {
   gap: 1rem;
   padding-block: 1.25rem 2.2rem;
   border-top: 1px solid var(--line);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .64rem;
   text-transform: uppercase;
 }
@@ -755,7 +763,7 @@ blockquote {
   align-items: center;
   margin-bottom: 2.5rem;
   color: var(--muted);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .68rem;
   text-transform: uppercase;
 }
@@ -784,7 +792,7 @@ blockquote {
   display: block;
   margin-bottom: .65rem;
   color: var(--accent);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .7rem;
   text-transform: uppercase;
 }
@@ -865,7 +873,7 @@ blockquote {
   display: block;
   margin-bottom: 1rem;
   color: var(--accent);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(2rem,6vw,5rem);
   letter-spacing: -.08em;
 }
@@ -885,7 +893,7 @@ blockquote {
   padding: .55rem .7rem;
   border: 1px solid var(--line);
   background: var(--surface);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .68rem;
   text-decoration: none;
 }
@@ -910,11 +918,11 @@ blockquote {
 }
 .record-list time,.record-list span,.game-list span {
   color: var(--muted);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .68rem;
 }
 .record-list strong,.game-list strong {
-  font-family: Georgia,"Times New Roman",serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: 1.35rem;
   font-weight: 400;
 }
@@ -927,7 +935,7 @@ blockquote {
 .tag {
   padding: .24rem .4rem;
   border: 1px solid var(--line-soft);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .58rem;
   text-transform: uppercase;
 }
@@ -938,7 +946,7 @@ blockquote {
   align-items: start;
 }
 .shelf-number {
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: 2.8rem;
   line-height: 1;
   color: var(--accent);
@@ -1014,7 +1022,7 @@ blockquote {
 .reader-back {
   display: inline-block;
   margin-bottom: 2rem;
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .72rem;
 }
 .reader-header {
@@ -1037,7 +1045,7 @@ blockquote {
 .markdown-body {
   max-width: 760px;
   padding: clamp(1.5rem,4vw,3rem) 0;
-  font-family: Georgia,"Times New Roman",serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: 1.12rem;
   line-height: 1.75;
 }
@@ -1056,7 +1064,7 @@ blockquote {
 .markdown-body code,.panel code {
   padding: .1em .28em;
   background: var(--surface-2);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .86em;
 }
 .markdown-image {
@@ -1138,7 +1146,7 @@ body {
   overflow-x: hidden;
   background: var(--page);
   color: var(--ink);
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: 14px;
   line-height: 1.42;
   transition: none;
@@ -1172,7 +1180,7 @@ body > .site-header {
 }
 
 .site-header .brand strong {
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: clamp(1.35rem,2.5vw,2.25rem);
   font-weight: 700;
   letter-spacing: -.04em;
@@ -1269,7 +1277,7 @@ body > .site-header {
   place-items: center;
   border: 1px solid var(--line);
   color: var(--ink);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: 1.35rem;
   font-weight: 700;
   text-decoration: none;
@@ -1293,7 +1301,7 @@ body > .site-header {
   padding-bottom: 4px;
   border-bottom: 1px dotted var(--line);
   color: var(--ink);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .66rem;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1331,7 +1339,7 @@ body > .site-header {
   margin-top: 24px;
   padding-top: 10px;
   border-top: 1px dotted var(--line);
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: .65rem;
   line-height: 1.7;
 }
@@ -1388,7 +1396,7 @@ body > .site-header {
 
 .side-quote {
   color: var(--ink)!important;
-  font-family: Georgia,"Times New Roman",serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: 1.2rem!important;
   font-style: italic;
 }
@@ -1447,7 +1455,7 @@ body > .lab-grid {
 .record-list time,
 .record-list span,
 .game-list span {
-  font-family: "Courier New",Courier,monospace;
+  font-family: "Roboto Slab",Georgia,serif;
 }
 
 h1,
@@ -1456,7 +1464,7 @@ h2,
 .markdown-body h2,
 .markdown-body h3,
 .markdown-body h4 {
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-weight: 700;
   letter-spacing: -.02em;
 }
@@ -1618,7 +1626,7 @@ h2,
 
 .record-list strong,
 .game-list strong {
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-weight: 700;
 }
 
@@ -1636,7 +1644,7 @@ h2,
 }
 
 .markdown-body {
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: "Roboto Slab",Georgia,serif;
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -1837,22 +1845,47 @@ h2,
   }
 }
 
-/* Black Rose: aynı ince çerçeve düzeninde sıcak, katmanlı yüzeyler. */
-[data-theme="black"] .side-block {
-  background: var(--surface-2);
-}
+/* Siyah yüzeyler; palet yalnızca yazılarda ve küçük vurgularda. */
 [data-theme="black"] .widget-note {
-  background: var(--black-200);
+  background: var(--surface);
+  color: var(--ink);
 }
-[data-theme="black"] .site-header .brand-mark i,
-[data-theme="black"] .profile-mark {
+[data-theme="black"] .widget-note .eyebrow,
+[data-theme="black"] .widget-note p,
+[data-theme="black"] .widget-note blockquote {
+  color: var(--accent)!important;
+}
+[data-theme="black"] .sidebar-nav a:hover,
+[data-theme="black"] .sidebar-nav a[aria-current="page"],
+[data-theme="black"] .player-button:hover:not(:disabled),
+[data-theme="black"] .timer-controls button:hover,
+[data-theme="black"] .site-header .utility-link:hover,
+[data-theme="black"] .site-header .theme-control select:hover,
+[data-theme="black"] .tag {
+  background: var(--surface-2);
   color: var(--accent);
+}
+[data-theme="black"] h1,
+[data-theme="black"] h2,
+[data-theme="black"] h3,
+[data-theme="black"] h4,
+[data-theme="black"] .brand strong {
+  color: var(--black-100);
+}
+[data-theme="black"] a,
+[data-theme="black"] .profile-mark,
+[data-theme="black"] .side-quote {
+  color: var(--black-300)!important;
+}
+[data-theme="black"] a:hover,
+[data-theme="black"] .sidebar-nav a[aria-current="page"] {
+  color: var(--black-100)!important;
+}
+[data-theme="black"] .eyebrow,
+[data-theme="black"] .sidebar-label,
+[data-theme="black"] .track-kicker {
+  color: var(--black-300)!important;
 }
 [data-theme="black"] .site-header .brand-mark i {
   background: var(--accent);
-}
-[data-theme="black"] .widget-topline > a,
-[data-theme="black"] .room-nav a,
-[data-theme="black"] .breadcrumbs {
-  color: var(--muted);
 }
